@@ -1,13 +1,14 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> AdonisJS - A fully featured web framework for Node.js </title>
+@layout({title: "Home Adonis"})
+  <section class="hero is-warning">
+    <div class="hero-body">
+      <p class="title">
+        It works
+      </p>
+      <p class="subtitle">
+        Joepie
+      </p>
+      @!component('components/button', {type: "submit", text: "hallo"})
+    </div>
+  </section>
+@end
 
-  @vite(['resources/css/app.css', 'resources/js/app.js'])
-</head>
-<body>
-  <h1> It Works! </h1>
-</body>
-</html>
