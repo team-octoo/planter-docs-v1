@@ -1,1 +1,0 @@
-# planter-docs-v1
