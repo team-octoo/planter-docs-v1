@@ -1,6 +1,6 @@
 # Planter documentation website
 
-## Dependancies
+## Dependencies
 
 ### Bootstrap grid
 
