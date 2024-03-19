@@ -1,0 +1,49 @@
+.pageWrapper {
+  display: flex;
+  background-color: cyan;
+  min-height: calc(150vh - var(--appNavheight));
+}
+
+.docsNavigationWrapper {
+  width: 17.5rem;
+  background-color: tomato;
+  max-height: calc(100vh - var(--appNavheight));
+  position: sticky;
+  top: var(--appNavheight)
+}
+
+.pageContent {
+  flex: 1;
+  background-color: lime;
+}
+
+.pageNavigationWraper {
+  width: 15rem;
+  background-color: purple;
+  display: none;
+}
+
+/* Desktop */
+@media screen and (min-width: 1280px) {
+  .pageNavigationWraper {
+    display: block;
+    max-height: calc(100vh - var(--appNavheight));
+    position: sticky;
+    top: var(--appNavheight)
+  }
+}
+
+/* Smartphone */
+@media screen and (max-width: 767px) {
+  .pageWrapper {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .docsNavigationWrapper {
+    width: 100%;
+    max-height: none;
+    position: static;
+    top: auto;
+  }
+}

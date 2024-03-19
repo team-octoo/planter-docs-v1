@@ -540,6 +540,25 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-2.0.2.tgz#d9fae00a2d5cb40f92cfe64b47ad749fbc38f917"
   integrity sha512-6EwiSjwWYP7pTckG6I5eyFANjPhmPjUX9JRLUSfNPC7FX7zK9gyZAfUEaECL6ALTpGX5AjnBq3C9XmVWPitNpw==
 
+"@iconify-json/material-symbols@^1.1.75":
+  version "1.1.75"
+  resolved "https://registry.yarnpkg.com/@iconify-json/material-symbols/-/material-symbols-1.1.75.tgz#a74eff93956a1835155eda278fe5d0e608e6d868"
+  integrity sha512-YMLagGENDw9QNoo4sPDoMX9wO20YptQ2FuTDCf/H/uRH4lGmD08C+z+kYwR4A90qyyo6hYG7yccPEiMOuLow5A==
+  dependencies:
+    "@iconify/types" "*"
+
+"@iconify/iconify@^3.1.1":
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/@iconify/iconify/-/iconify-3.1.1.tgz#aa0f3807be2eab53e86228f7bb1ad3bd59bcec1a"
+  integrity sha512-1nemfyD/OJzh9ALepH7YfuuP8BdEB24Skhd8DXWh0hzcOxImbb1ZizSZkpCzAwSZSGcJFmscIBaBQu+yLyWaxQ==
+  dependencies:
+    "@iconify/types" "^2.0.0"
+
+"@iconify/types@*", "@iconify/types@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@iconify/types/-/types-2.0.0.tgz#ab0e9ea681d6c8a1214f30cd741fe3a20cc57f57"
+  integrity sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==
+
 "@japa/assert@^2.1.0":
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/@japa/assert/-/assert-2.1.0.tgz#ab9646d131da6f9b29a08d4774712a85ca887d38"
@@ -1912,6 +1931,13 @@ edge-error@^4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/edge-error/-/edge-error-4.0.1.tgz#75026374856f3a669fe63b401c9ff9b809354305"
   integrity sha512-z5mNO97k8hRVpJ6Ew1qbkMTfQ44CwuWnl+ShMCrEFgD+b324CnjBS6HbiR+Wh6Wcmw9C+/XsFBHzZ+376PpD/w==
+
+edge-iconify@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/edge-iconify/-/edge-iconify-2.0.1.tgz#a5469552f206c719c34726343905c5c66305807f"
+  integrity sha512-VRWeiz4qnm/dlcGQuMd/olTTfCHHCRleW6kcy0EdXZE8hreXDx01I55f/yzYezePGsWwBuKirFVzwnrz4qMo0g==
+  dependencies:
+    "@iconify/iconify" "^3.1.1"
 
 edge-lexer@^6.0.1:
   version "6.0.1"

@@ -3,8 +3,74 @@
   padding: 0;
 }
 
+:root {
+  /* colors */
+  --border-color: #dbd8e0;
+
+  /* dimensions */
+  --appNavheight: 4rem;
+}
+
 html,
 body {
   height: 100%;
   width: 100%;
+}
+
+.appNavigationWrapper {
+  height: 4rem;
+  border-bottom: solid 1px var(--border-color);
+  position: sticky;
+  background-color: white;
+  top: 0px;
+  left: 0px;
+}
+
+.appNavigation {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.appNavigation > .navSection {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.appNavigation > .logoContainer {
+  width: 15%;
+}
+
+.appNavigation > .searchBarContainer {
+  width: 70%;
+}
+
+.appNavigation > .settingsContainer {
+  width: 15%;
+}
+
+/* Tablet */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  
+}
+
+/* Smartphone */
+@media screen and (max-width: 767px) {
+  .appNavigation > .navSection {
+    padding: 0 0.5rem;
+  }
+
+  .appNavigation > .logoContainer {
+    width: 15%;
+  }
+
+  .appNavigation > .searchBarContainer {
+    width: 75%;
+  }
+
+  .appNavigation > .settingsContainer {
+    width: 10%;
+  }
 }
