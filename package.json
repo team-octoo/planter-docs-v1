@@ -57,7 +57,7 @@
     "@adonisjs/shield": "^8.1.0",
     "@adonisjs/static": "^1.1.1",
     "@adonisjs/vite": "^2.0.2",
-    "@iconify-json/material-symbols": "^1.1.75",
+    "@iconify-json/mdi": "^1.1.64",
     "@vinejs/vine": "^1.7.1",
     "better-sqlite3": "^9.4.1",
     "edge-iconify": "^2.0.1",

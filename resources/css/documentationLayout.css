@@ -1,12 +1,12 @@
 .pageWrapper {
   display: flex;
-  background-color: cyan;
+  /* background-color: cyan; */
   min-height: calc(150vh - var(--appNavheight));
 }
 
 .docsNavigationWrapper {
   width: 17.5rem;
-  background-color: tomato;
+  /* background-color: tomato; */
   max-height: calc(100vh - var(--appNavheight));
   position: sticky;
   top: var(--appNavheight)
@@ -14,12 +14,12 @@
 
 .pageContent {
   flex: 1;
-  background-color: lime;
+  /* background-color: lime; */
 }
 
 .pageNavigationWraper {
   width: 15rem;
-  background-color: purple;
+  /* background-color: purple; */
   display: none;
 }
 

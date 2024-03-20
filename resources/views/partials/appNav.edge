@@ -1,21 +1,34 @@
-@vite(['resources/css/reset.css', 'resources/css/app.css'])
+@vite(['resources/css/reset.css', 'resources/css/app.css', 'resources/js/app.js'])
 
 <div class="appNavigationWrapper">
 
   <nav class="appNavigation">
     <!-- logo -->
     <div class="navSection logoContainer">
-
+      <a class="homeButton" href={{ route('home') }}>
+        {{ svg('mdi:plant-outline') }}
+        <span class="logoText">Planter</span>
+      </a>
     </div>
 
     <!-- search -->
     <div class="navSection searchBarContainer">
-
+      <button id="searchBar" class="searchBar">
+        <span class="searchIcon">{{ svg('mdi:search') }}</span>
+        <span class="searchText">Search</span>
+      </button>
     </div>
 
     <!-- settings / other -->
     <div class="navSection settingsContainer">
-
+      <div class="settings darkTheme">
+        <button id="darkThemeSwitcher" class="setting">{{ svg('mdi:moon-and-stars') }}</button>
+        <button id="lightThemeSwitcher" class="setting">{{ svg('mdi:white-balance-sunny') }}</button>
+        <a href="https://github.com/team-octoo/planter-docs-v1" target="_blank" class="setting">{{ svg('mdi:github') }}</a>
+      </div>
+      <div class="mobileSettings">
+        <button id="mobileSettingsButton" class="setting">{{ svg('mdi:more-vert') }}</button>
+      </div>
     </div>
   </nav>
 </div>

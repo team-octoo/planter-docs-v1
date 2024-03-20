@@ -14,7 +14,7 @@ const LoginController = () => import('#controllers/login_controller')
 import router from '@adonisjs/core/services/router'
 import { middleware } from './kernel.js'
 
-router.on('/').render('pages/home')
+router.on('/').render('pages/home').as('home')
 /* Documentation pages */
 router.get('/docs/introduction', [DocumentationsController, 'index']).as('docs.introduction')
 router.get('/docs/installation', [DocumentationsController, 'installation']).as('docs.installation')

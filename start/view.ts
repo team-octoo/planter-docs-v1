@@ -2,8 +2,8 @@ import edge from 'edge.js'
 
 import { addCollection, edgeIconify } from 'edge-iconify'
 
-import { icons as matIcons } from '@iconify-json/material-symbols'
+import { icons as mdIcons } from '@iconify-json/mdi'
 
-addCollection(matIcons)
+addCollection(mdIcons)
 
 edge.use(edgeIconify)
