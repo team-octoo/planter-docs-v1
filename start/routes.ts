@@ -9,7 +9,10 @@
 
 const DocumentationsController = () => import('#controllers/documentations_controller')
 const CommunitiesController = () => import('#controllers/communities_controller')
+const AdminController = () => import('#controllers/admin_controller')
+const LoginController = () => import('#controllers/login_controller')
 import router from '@adonisjs/core/services/router'
+import { middleware } from './kernel.js'
 
 router.on('/').render('pages/home')
 /* Documentation pages */
@@ -20,3 +23,7 @@ router.get('/docs/packages', [DocumentationsController, 'packages']).as('docs.pa
 
 /* Community pages */
 router.get('/community/prebuilds', [CommunitiesController, 'index'])
+
+/* Admin & login pages */
+router.get('/login', [LoginController, 'index'])
+router.get('/admin/prebuilds', [AdminController, 'index']).middleware(middleware.auth())
