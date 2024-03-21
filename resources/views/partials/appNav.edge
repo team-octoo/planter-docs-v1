@@ -1,4 +1,5 @@
-@vite(['resources/css/reset.css', 'resources/css/app.css', 'resources/js/app.js'])
+@vite(['resources/css/reset.css', 'resources/css/app.css', 'resources/css/appNavigation.css' ,
+'resources/js/app_navigation.js'])
 
 <div class="appNavigationWrapper">
 
@@ -24,10 +25,27 @@
       <div class="settings darkTheme">
         <button id="darkThemeSwitcher" class="setting">{{ svg('mdi:moon-and-stars') }}</button>
         <button id="lightThemeSwitcher" class="setting">{{ svg('mdi:white-balance-sunny') }}</button>
-        <a href="https://github.com/team-octoo/planter-docs-v1" target="_blank" class="setting">{{ svg('mdi:github') }}</a>
+        <a href="https://github.com/team-octoo/planter-docs-v1" target="_blank" class="setting">{{ svg('mdi:github')
+          }}</a>
       </div>
       <div class="mobileSettings">
         <button id="mobileSettingsButton" class="setting">{{ svg('mdi:more-vert') }}</button>
+      </div>
+      <div class="mobileSettingsContainer hidden">
+        <div class="mobileSettingsOverlay"></div>
+        <div class="mobileSettingsMenu">
+          <ul>
+            <li><a href="https://github.com/team-octoo/planter-docs-v1" target="_blank">Github</a></li>
+            <li>
+              <div class="mobileThemeSwitcher darkTheme">
+                <span>Theme: </span>
+                <button id="mobileDarkThemeSwitcher" class="themeIconWrapper">{{ svg('mdi:moon-and-stars') }}</button>
+                <button id="mobileLightThemeSwitcher" class="themeIconWrapper">{{ svg('mdi:white-balance-sunny')
+                  }}</button>
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </nav>
