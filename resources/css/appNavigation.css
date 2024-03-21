@@ -1,8 +1,12 @@
+.hidden {
+  display: none;
+}
+
 .appNavigationWrapper {
   height: 4rem;
   border-bottom: solid 1px var(--border-color);
   position: sticky;
-  background-color: white;
+  background-color: var(--background-color);
   top: 0px;
   left: 0px;
 }
@@ -29,7 +33,7 @@
   gap: 1rem;
   align-items: center;
   text-decoration: none;
-  color: black;
+  color: var(--text-color);
   font-weight: 700;
   font-size: 2rem;
   width: 100%;
@@ -48,124 +52,37 @@
   gap: .5rem;
   padding: .25rem .5rem;
   border: solid 2px transparent;
-  border-radius: 0.375rem;
+  border-radius: var(--border-radius);
   background-color: var(--border-color);
 }
 
 .appNavigation > .searchBarContainer > .searchBar:hover {
   transition: .3s;
-  border: solid 2px black;
+  border: solid 2px var(--border-color-hover);
 }
 
 .appNavigation > .settingsContainer {
   width: 15%;
 }
 
-.appNavigation > .settingsContainer > .mobileSettings {
-  display: none;
-}
-
-.appNavigation > .settingsContainer > .settings {
+.settingsContainer > .settings {
   display: flex;
-  flex-direction: row-reverse;
-  align-items: center;
-  gap: 1.5rem;
-  width: 100%;
-}
-
-.darkTheme > #lightThemeSwitcher, .darkTheme > #mobileLightThemeSwitcher {
-  display: none;
-}
-
-.lightTheme > #darkThemeSwitcher, .lightTheme > #mobileDarkThemeSwitcher {
-  display: none;
-}
-
-.appNavigation > .settingsContainer > .settings > .setting, .appNavigation > .settingsContainer > .mobileSettings > #mobileSettingsButton {
-  text-decoration: none;
-  color: black;
-  cursor: pointer;
-  border: none;
-  background-color: transparent;
-}
-
-.appNavigation > .settingsContainer > .settings > .setting:hover, .appNavigation > .settingsContainer > .mobileSettings > #mobileSettingsButton:hover {
-  transition: .3s;
-  color: var(--border-color);
-}
-
-.appNavigation > .settingsContainer > .settings > .setting > svg, .appNavigation > .settingsContainer > .mobileSettings > #mobileSettingsButton > svg {
-  width: 1.5rem;
-  height: 1.5rem;
-}
-
-.appNavigation > .settingsContainer > .hidden {
-  display: none;
-}
-
-.appNavigation > .settingsContainer > .mobileSettingsContainer {
-  position: relative;
-}
-
-.appNavigation > .settingsContainer > .mobileSettingsContainer > .mobileSettingsOverlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 90;
-}
-
-.appNavigation > .settingsContainer > .mobileSettingsContainer > .mobileSettingsMenu {
-  position: absolute;
-  top: 0;
-  right: 1rem;
-  background-color: #f9f9f9;
-  max-width: 80vw;
-  width: 10rem;
-  border-radius: 0.375rem;
-  z-index: 99;
-}
-
-.appNavigation > .settingsContainer > .mobileSettingsContainer > .mobileSettingsMenu > ul {
-  list-style: none;
-  padding: 1rem;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
   gap: 1rem;
-  text-wrap: nowrap;
+  justify-content: flex-end;
 }
 
-.appNavigation > .settingsContainer > .mobileSettingsContainer > .mobileSettingsMenu > ul > li {
-  font-weight: 500;
-}
-
-.mobileSettingsMenu > ul > li > a {
-  color: black;
+.settingsContainer > .settings > .settingsItem {
   text-decoration: none;
+  color: var(--text-color);
 }
 
-.appNavigation > .settingsContainer > .mobileSettingsContainer > .mobileSettingsMenu > ul > li > .mobileThemeSwitcher {
-  display: flex;
-  flex-direction: row;
-  gap: 1rem;
-  align-items: center;
+.settingsContainer > .settings > .settingsItem > svg {
+  width: 2rem;
+  height: 2rem;
 }
 
-.appNavigation > .settingsContainer > .mobileSettingsContainer > .mobileSettingsMenu > ul > li > .mobileThemeSwitcher > .themeIconWrapper {
-  min-width: 32px;
-  min-height: 32px;
-  border: none;
-  background-color: transparent;
-}
-
-.themeIconWrapper > svg {
-  width: 100%;
-  height: 100%;
-  border: solid 1px tomato;
+.settingsContainer > .mobileSettings  {
+  display: none
 }
 
 
@@ -198,14 +115,78 @@
     width: 10%;
   }
 
-  .appNavigation > .settingsContainer > .settings {
+  .settingsContainer > .settings {
     display: none;
   }
 
-  .appNavigation > .settingsContainer > .mobileSettings {
+  .settingsContainer > .mobileSettings {
     display: flex;
-    flex-direction: row-reverse;
-    align-items: center;
+  }
+
+  #mobileSettingsButton {
+    border: none;
+    background-color: transparent;
+  }
+
+  #mobileSettingsButton > svg{
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .mobileSettingsWrapper {
+    position: relative;
+  }
+
+  .mobileSettingsWrapper > .mobileSettingsOverlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .mobileSettingsWrapper > .mobileSettingsMenu {
+    position: absolute;
+    top: 0;
+    right: 1rem;
+    max-width: 80vw;
+    width: 15rem;
+    background-color: var(--background-color);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+  }
+
+  .mobileSettingsMenu > ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
     width: 100%;
   }
+
+  .mobileSettingsMenu > ul > li {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    font-weight: 500;
+    color: var(--text-color);
+    padding: .5rem 0;
+  }
+
+  .mobileSettingsMenu > ul > hr {
+    margin: 0;
+    border: none;
+    height: 2px;
+    background-color: var(--text-color);
+  }
+
+  .mobileSettingsMenu > ul > li > a {
+    text-decoration: none;
+    color: var(--text-color);
+  }
+
+
 }
