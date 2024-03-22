@@ -22,7 +22,7 @@ router.get('/docs/releases', [DocumentationsController, 'releases']).as('docs.re
 router.get('/docs/packages', [DocumentationsController, 'packages']).as('docs.packages')
 
 /* Community pages */
-router.get('/community/prebuilds', [CommunitiesController, 'index'])
+router.get('/community/prebuilds', [CommunitiesController, 'index']).as('community.prebuilds')
 
 /* Admin & login pages */
 router.get('/login', [LoginController, 'index'])

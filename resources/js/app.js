@@ -1,1 +1,5 @@
-console.log('hello world')
+function initTheme() {
+  localStorage.setItem('darkMode', true)
+}
+
+initTheme()

@@ -1,4 +1,3 @@
-console.log('hello switchers')
 const localStorage = window.localStorage
 const darkModeSwitches = document.querySelectorAll('#darkModeSwitch')
 const darkModeSwitchButtons = document.querySelectorAll('#darkModeSwitchButton')
@@ -20,9 +19,9 @@ const handleThemeSwitch = function () {
   }
 }
 
-function initTheme() {
-  localStorage.setItem('darkMode', false)
-}
+// function initTheme() {
+//   localStorage.setItem('darkMode', false)
+// }
 
 function initEventListeners() {
   darkModeSwitchButtons.forEach((button) => {
@@ -31,7 +30,7 @@ function initEventListeners() {
 }
 
 function init() {
-  initTheme()
+  // initTheme()
   initEventListeners()
 }
 

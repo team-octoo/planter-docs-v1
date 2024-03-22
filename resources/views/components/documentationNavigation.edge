@@ -1,0 +1,21 @@
+@vite(['resources/css/reset.css', 'resources/css/app.css', 'resources/css/documentationNavigation.css',
+'resources/js/documentation_navigation.js'])
+
+<div class="documentationNavigationWrapper">
+  <details id="gettingStartedMenu">
+    <summary>Getting started</summary>
+    <ul class="detailNav">
+      <li><a href={{ route('docs.introduction') }}>Introduction</a></li>
+      <li><a href={{ route('docs.installation') }}>Installation</a></li>
+      <li><a href={{ route('docs.releases')}}>Releases</a></li>
+      <li><a href={{ route('docs.packages') }}>Packages</a></li>
+    </ul>
+  </details>
+
+  <details id="communityMenu">
+    <summary>Community</summary>
+    <ul class="detailNav">
+      <li><a href={{ route('community.prebuilds') }}>Prebuilds</a></li>
+    </ul>
+  </details>
+</div>

@@ -58,7 +58,7 @@
 }
 
 .appNavigation > .searchBarContainer > .searchBar:hover {
-  transition: .3s;
+  transition: var(--transition-duration);
   border: solid 2px var(--border-color-hover);
 }
 

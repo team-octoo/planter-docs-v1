@@ -14,13 +14,12 @@
 
 <body>
 
-  {{-- app navbar partial here --}}
-
   @include('partials/appNav')
 
   <div class="pageWrapper">
     <div class="docsNavigationWrapper">
-      <span>Docs nav here please</span>
+      {{-- @include('partials/documentationNavigation') --}}
+      @!component('components/documentationNavigation', {})
     </div>
     <div class="pageContent">
       <div class="pageMainContent">
@@ -31,7 +30,8 @@
       </div>
     </div>
     <div class="pageNavigationWraper">
-      @include('partials/pageNavigation')
+      {{-- @include('partials/pageNavigation') --}}
+      @!component('components/pageNavigation', {})
     </div>
   </div>
 </body>

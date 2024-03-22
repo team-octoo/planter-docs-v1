@@ -17,6 +17,8 @@
   /* dimensions */
   --appNavheight: 4rem;
   --border-radius:  0.375rem;
+
+  --transition-duration: .3s;
 }
 
 :root:has(#darkModeSwitch:checked) {

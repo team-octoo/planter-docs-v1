@@ -1,0 +1,35 @@
+.documentationNavigationWrapper > details {
+  margin-bottom: 1rem;
+}
+
+.documentationNavigationWrapper > details > summary {
+  padding: .5rem 1rem;
+  font-weight: 700;
+  list-style: none;
+}
+
+.documentationNavigationWrapper > details > ul {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+.documentationNavigationWrapper > details > ul > li {
+  padding: .5rem 1rem;
+  font-size: 0.813rem;
+}
+
+.documentationNavigationWrapper > details > ul > li > a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.documentationNavigationWrapper > details > ul > li:hover {
+  background-color: var(--border-color);
+  transition: var(--transition-duration);
+  cursor: pointer;
+}
+
+.detailNav li:hover a {
+  color: var(--primary-color)
+}
