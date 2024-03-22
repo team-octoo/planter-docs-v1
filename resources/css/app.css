@@ -4,11 +4,15 @@
 }
 
 :root {
+  /* Typo */
+  --sectionTitle-font-size: 1rem;
   /* colors */
   --background-color: #ffffff;
   --text-color: #000000;
   --border-color: #d4d4d4;
   --border-color-hover: #a4a4a4;
+  --primary-color: #78A083;
+  --secondary-color: #50727B;
 
   /* dimensions */
   --appNavheight: 4rem;
@@ -16,8 +20,10 @@
 }
 
 :root:has(#darkModeSwitch:checked) {
-  --background-color: #000000;
+  --background-color: #1f1f1f;
   --text-color: #ffffff;
+  --border-color: #35374B;
+  --border-color-hover: #50727B;
 }
 
 html,
@@ -26,4 +32,10 @@ body {
   width: 100%;
   background-color: var(--background-color);
   color: var(--text-color);
+}
+
+h3 {
+  font-size: var(--sectionTitle-font-size);
+  font-weight: 700;
+  margin-bottom: 1rem;
 }

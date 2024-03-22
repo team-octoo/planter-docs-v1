@@ -54,6 +54,7 @@
   border: solid 2px transparent;
   border-radius: var(--border-radius);
   background-color: var(--border-color);
+  color: var(--text-color);
 }
 
 .appNavigation > .searchBarContainer > .searchBar:hover {
