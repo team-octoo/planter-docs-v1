@@ -1,6 +1,8 @@
 @vite(['resources/css/reset.css', 'resources/css/app.css', 'resources/css/documentationNavigation.css',
 'resources/js/documentation_navigation.js'])
 
+{{-- --mobileOpenNav --}}
+
 <div class="documentationNavigationWrapper">
   <details id="gettingStartedMenu">
     <summary>Getting started</summary>
@@ -18,4 +20,11 @@
       <li><a href={{ route('community.prebuilds') }}>Prebuilds</a></li>
     </ul>
   </details>
+</div>
+
+<div id="mobileDocsNavOverlay"></div>
+
+<div id="mobileDocsNavButton">
+  {{ svg('mdi:menu') }}
+  <span>Menu</span>
 </div>
