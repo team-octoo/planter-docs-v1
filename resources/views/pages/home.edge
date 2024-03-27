@@ -1,11 +1,18 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Planter</title>
-  </head>
-  <body>
-    <h1>🌱 Planter home</h1>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Planter</title>
+</head>
+
+<body>
+  @include('partials/appNav')
+
+  <div class="pageWrapper">
+    <a href={{ route('docs.introduction') }}>Documentation</a>
+  </div>
+</body>
+
 </html>

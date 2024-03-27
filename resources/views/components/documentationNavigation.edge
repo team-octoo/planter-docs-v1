@@ -7,17 +7,22 @@
   <details id="gettingStartedMenu">
     <summary>Getting started</summary>
     <ul class="detailNav">
-      <li><a href={{ route('docs.introduction') }}>Introduction</a></li>
-      <li><a href={{ route('docs.installation') }}>Installation</a></li>
-      <li><a href={{ route('docs.releases')}}>Releases</a></li>
-      <li><a href={{ route('docs.packages') }}>Packages</a></li>
+      <li class={{ request.url()===route('docs.introduction') ? 'activeNavItem' : '' }}><a href={{
+          route('docs.introduction') }}>Introduction</a></li>
+      <li class={{ request.url()===route('docs.installation') ? 'activeNavItem' : '' }}><a href={{
+          route('docs.installation') }}>Installation</a></li>
+      <li class={{ request.url()===route('docs.releases') ? 'activeNavItem' : '' }}><a href={{
+          route('docs.releases')}}>Releases</a></li>
+      <li class={{ request.url()===route('docs.packages') ? 'activeNavItem' : '' }}><a href={{ route('docs.packages')
+          }}>Packages</a></li>
     </ul>
   </details>
 
   <details id="communityMenu">
     <summary>Community</summary>
     <ul class="detailNav">
-      <li><a href={{ route('community.prebuilds') }}>Prebuilds</a></li>
+      <li class={{ request.url()===route('community.prebuilds') ? 'activeNavItem' : '' }}><a href={{
+          route('community.prebuilds') }}>Prebuilds</a></li>
     </ul>
   </details>
 </div>

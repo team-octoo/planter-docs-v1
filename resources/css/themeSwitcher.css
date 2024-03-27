@@ -12,6 +12,7 @@
   border: solid 2px var(--text-color);
   background-color: transparent;
   border-radius: var(--border-radius);
+  cursor: pointer;
 }
 
 .themeSwitchContainer > #darkModeSwitchButton > svg {

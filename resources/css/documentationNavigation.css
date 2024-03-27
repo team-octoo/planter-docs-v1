@@ -5,6 +5,7 @@
 .documentationNavigationWrapper > details > summary {
   padding: 1rem;
   font-weight: 700;
+  cursor: pointer;
 }
 
 .documentationNavigationWrapper > details > summary::before {
@@ -22,6 +23,10 @@
 
 .documentationNavigationWrapper > details > ul > li {
   font-size: 0.813rem;
+}
+
+.activeNavItem {
+  background-color: var(--primary-color);
 }
 
 .mobileViewNav > details > ul > li {
