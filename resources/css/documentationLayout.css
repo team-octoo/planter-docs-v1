@@ -1,12 +1,10 @@
 .pageWrapper {
   display: flex;
-  /* background-color: cyan; */
   min-height: calc(100vh - var(--appNavheight));
 }
 
 .docsNavigationWrapper {
   width: 17.5rem;
-  /* background-color: tomato; */
   max-height: calc(100vh - var(--appNavheight));
   position: sticky;
   top: var(--appNavheight);
@@ -15,17 +13,19 @@
 
 .pageContent {
   flex: 1;
-  /* background-color: lime; */
 }
 
-.pageContent > .pageMainContent {
-  padding: 1rem;
+.pageContent > .pageMainContent, .pageContent > .pageTitle {
+  padding: 1rem 0 .5rem 0;
   max-width: 100vw;
+}
+
+.pageContent > .pageMainContent > section {
+  padding: 1rem 0;
 }
 
 .pageNavigationWraper {
   width: 15rem;
-  /* background-color: purple; */
   display: none;
 }
 
@@ -38,8 +38,7 @@
     top: var(--appNavheight);
   }
 
-  .pageContent > .pageMainContent {
-    min-height: calc(100vh - var(--appNavheight));
+  .pageContent > .pageMainContent, .pageContent > .pageTitle {
     margin: 0 auto;
     max-width: 50vw;
   }

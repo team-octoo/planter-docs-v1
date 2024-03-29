@@ -5,7 +5,10 @@
 
 :root {
   /* Typo */
-  --sectionTitle-font-size: 1rem;
+  --page-title-font-size: 2rem;
+  --section-title-font-size: 1.5rem;
+  --section-subtitle-font-size: 1.2rem;
+  --text-font-size: 1rem;
   /* colors */
   --background-color: #ffffff;
   --text-color: #000000;
@@ -30,14 +33,32 @@
 
 html,
 body {
+  font-family:Arial, Helvetica, sans-serif;
   height: 100%;
   width: 100%;
   background-color: var(--background-color);
   color: var(--text-color);
 }
 
-h3 {
-  font-size: var(--sectionTitle-font-size);
+h1 {
+  font-size: var(--page-title-font-size);
   font-weight: 700;
+  margin-bottom: .75rem;
+}
+
+h2 {
+  font-size: var(--section-title-font-size);
+  font-weight: 700;
+  margin-bottom: .5rem;
+}
+
+h3 {
+  font-size: var(--section-subtitle-font-size);
+  font-weight: 700;
+  margin-bottom: .25rem;
+}
+
+p {
+  font-size: var(--text-font-size);
   margin-bottom: 1rem;
 }

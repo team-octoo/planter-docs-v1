@@ -20,6 +20,11 @@
       @!component('components/documentationNavigation', {})
     </div>
     <div class="pageContent">
+      <div class="pageTitle">
+        @if(title)
+        <h1>{{ title }}</h1>
+        @end
+      </div>
       <div class="pageMainContent">
         {{{ await $slots.main() }}}
       </div>
