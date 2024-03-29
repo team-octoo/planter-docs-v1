@@ -6,11 +6,9 @@
   <div class="scrollNavigation">
     <nav>
       <ul>
-        <li><a href="#" class="scrollNavItem">What is Planter?</a></li>
-        <li><a href="#" class="scrollNavItem">Scroll item #2</a></li>
-        <li><a href="#" class="scrollNavItem">Scroll item #3</a></li>
-        <li><a href="#" class="scrollNavItem">Scroll item #4</a></li>
-        <li><a href="#" class="scrollNavItem">Scroll item #5</a></li>
+        @each(navItem in pageNavItems)
+        <li> <a class="scrollNavItem" href={{ "#" + navItem.slug }}>{{ navItem.label }}</a> </li>
+        @end
       </ul>
     </nav>
   </div>
