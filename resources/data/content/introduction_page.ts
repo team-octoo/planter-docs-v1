@@ -1,22 +1,22 @@
 export const introPageContent = {
   content:
     "<section>\n  <h2 class='sectionTitle'>A Pirate's Guide to Allotment Gardening</h2>\n</section>\n\n<section class='documentationSection'>\n  <h2 id=\"setting-sail-for-the-allotment\" class='sectionTitle'>Setting Sail for the Allotment</h2>\n  <h3 id=\"choosing-your-plot\" class='sectionSubtitle'>Choosing Your Plot</h3>\n  <p>When embarking on your journey to grow your own bounty, the first step is to secure a suitable plot of land for\n    your allotment. Seek out a patch of earth with plenty of sunshine and good drainage, where your plants can thrive\n    under the open sky.</p>\n</section>\n\n<section class='documentationSection'>\n  <h2 id=\"pillaging-the-soil\" class='sectionTitle'>Pillaging the Soil</h2>\n\n  <h3 id=\"preparing-the-ground\" class='sectionSubtitle'>Preparing the Ground</h3>\n  <p>Before you can sow your seeds and raise your crops, it's essential to prepare the soil for plundering. Begin by\n    turning over the earth with a sturdy spade, breaking up any clods and removing any weeds that dare to challenge your\n    sovereignty over the land.</p>\n\n  <h3 id=\"raiding-the-compost-heap\" class='sectionSubtitle'>Raiding the Compost Heap</h3>\n  <p>No pirate's garden is complete without a healthy dose of compost to enrich the soil and nourish your plants. Gather\n    up your kitchen scraps, yard waste, and any other organic matter you can lay your hands on, and let it decompose\n    into black gold fit for the finest crops.</p>\n</section>\n\n<section class='documentationSection'>\n  <h2 id=\"planting-your-plunder\" class='sectionTitle'>Planting Your Plunder</h2>\n\n  <h3 id=\"choosing-your-booty\" class='sectionSubtitle'>Choosing Your Booty</h3>\n  <p>When it comes to selecting which crops to grow in your pirate's allotment, the choices are as vast as the seven\n    seas. From hearty vegetables like potatoes and carrots to exotic treasures like tomatoes and peppers, the only limit\n    is your imagination (and the size of your plot).</p>\n\n  <h3 id=\"setting-sail-with-seeds\" class='sectionSubtitle'>Setting Sail with Seeds</h3>\n  <p>Whether you prefer to start from seed or plunder young plants from the local nursery, be sure to give your chosen\n    crops a head start by planting them at the optimal time for your region and providing them with plenty of water,\n    sunshine, and TLC.</p>\n</section>\n\n<section class='documentationSection'>\n  <h2 id=\"navigating-the-waters-of-maintenance\" class='sectionTitle'>Navigating the Waters of Maintenance</h2>\n\n  <h3 id=\"keeping-watch-for-pests-and-plagues\" class='sectionSubtitle'>Keeping Watch for Pests and Plagues</h3>\n  <p>Just as a vigilant lookout is essential for spotting rival ships on the horizon, so too must you keep a sharp eye\n    out for pests and diseases that threaten to ravage your hard-won harvest. Arm yourself with natural remedies like\n    neem oil and diatomaceous earth to fend off these invaders without resorting to harsh chemicals.</p>\n\n  <h3 id=\"harvesting-the-spoils\" class='sectionSubtitle'>Harvesting the Spoils</h3>\n  <p>At last, the time will come to reap the rewards of your labor and enjoy the fruits (and vegetables) of your\n    plunder. Gather your bounty with pride, knowing that you have sailed the seas of gardening with skill and cunning,\n    and that the taste of victory is as sweet as the ripest fruit.</p>\n</section>\n\n<section class='documentationSection'>\n  <h2 id=\"conclusion\" class='sectionTitle'>Conclusion</h2>\n\n  <h3 id=\"hoisting-the-jolly-roger-over-your-allotment\" class='sectionSubtitle'>Hoisting the Jolly Roger Over Your Allotment</h3>\n  <p>As a pirate of the allotment, you have proven yourself to be a master of the land as well as the sea. With your\n    wits, your determination, and a little help from Mother Nature, you can turn even the humblest patch of earth into a\n    treasure trove of fresh, delicious produce fit for a king—or a captain of your own destiny. So raise the Jolly Roger\n    high above your garden plot, and let the world know that you are a pirate gardener to be reckoned with!</p>\n</section>",
-  pageNavItems: [
-    { label: 'Setting Sail for the Allotment', slug: 'setting-sail-for-the-allotment' },
-    { label: 'Choosing Your Plot', slug: 'choosing-your-plot' },
-    { label: 'Pillaging the Soil', slug: 'pillaging-the-soil' },
-    { label: 'Preparing the Ground', slug: 'preparing-the-ground' },
-    { label: 'Raiding the Compost Heap', slug: 'raiding-the-compost-heap' },
-    { label: 'Planting Your Plunder', slug: 'planting-your-plunder' },
-    { label: 'Choosing Your Booty', slug: 'choosing-your-booty' },
-    { label: 'Setting Sail with Seeds', slug: 'setting-sail-with-seeds' },
-    { label: 'Navigating the Waters of Maintenance', slug: 'navigating-the-waters-of-maintenance' },
-    { label: 'Keeping Watch for Pests and Plagues', slug: 'keeping-watch-for-pests-and-plagues' },
-    { label: 'Harvesting the Spoils', slug: 'harvesting-the-spoils' },
-    { label: 'Conclusion', slug: 'conclusion' },
-    {
-      label: 'Hoisting the Jolly Roger Over Your Allotment',
-      slug: 'hoisting-the-jolly-roger-over-your-allotment',
-    },
-  ],
+  // pageNavItems: [
+  //   { label: 'Setting Sail for the Allotment', slug: 'setting-sail-for-the-allotment' },
+  //   { label: 'Choosing Your Plot', slug: 'choosing-your-plot' },
+  //   { label: 'Pillaging the Soil', slug: 'pillaging-the-soil' },
+  //   { label: 'Preparing the Ground', slug: 'preparing-the-ground' },
+  //   { label: 'Raiding the Compost Heap', slug: 'raiding-the-compost-heap' },
+  //   { label: 'Planting Your Plunder', slug: 'planting-your-plunder' },
+  //   { label: 'Choosing Your Booty', slug: 'choosing-your-booty' },
+  //   { label: 'Setting Sail with Seeds', slug: 'setting-sail-with-seeds' },
+  //   { label: 'Navigating the Waters of Maintenance', slug: 'navigating-the-waters-of-maintenance' },
+  //   { label: 'Keeping Watch for Pests and Plagues', slug: 'keeping-watch-for-pests-and-plagues' },
+  //   { label: 'Harvesting the Spoils', slug: 'harvesting-the-spoils' },
+  //   { label: 'Conclusion', slug: 'conclusion' },
+  //   {
+  //     label: 'Hoisting the Jolly Roger Over Your Allotment',
+  //     slug: 'hoisting-the-jolly-roger-over-your-allotment',
+  //   },
+  // ],
 }

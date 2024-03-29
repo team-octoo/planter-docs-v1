@@ -4,11 +4,7 @@
 <div class="pageNavigationContainer">
   <h3>On this page</h3>
   <div class="scrollNavigation">
-    <nav>
-      <ul>
-        @each(navItem in pageNavItems)
-        <li> <a class="scrollNavItem" href={{ "#" + navItem.slug }}>{{ navItem.label }}</a> </li>
-        @end
-      </ul>
+    <nav class="scrollNavigationList">
+      {{-- content generated through JS --}}
     </nav>
   </div>
