@@ -5,7 +5,6 @@ export default class DocumentationsController {
   async index({ view }: HttpContext) {
     return view.render('pages/introPage', {
       pageContent: introPageContent.content,
-      pageNavItems: introPageContent.pageNavItems,
     })
   }
 
