@@ -26,5 +26,6 @@ router.get('/docs/packages', [DocumentationsController, 'packages']).as('docs.pa
 router.get('/community/prebuilds', [CommunitiesController, 'index']).as('community.prebuilds')
 
 /* Admin & login pages */
-router.get('/login', [LoginController, 'index'])
+router.get('/login', [LoginController, 'index']).as('login')
+router.post('/login', [LoginController, 'post']).as('login.post')
 router.get('/admin/prebuilds', [AdminController, 'index']).middleware(middleware.auth())

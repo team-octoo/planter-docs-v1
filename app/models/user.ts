@@ -14,9 +14,6 @@ export default class User extends compose(BaseModel, AuthFinder) {
   declare id: number
 
   @column()
-  declare fullName: string
-
-  @column()
   declare firstName: string
   @column()
   declare lastName: string
@@ -28,6 +25,9 @@ export default class User extends compose(BaseModel, AuthFinder) {
 
   @column()
   declare password: string
+
+  @column()
+  declare active: boolean
 
   @column.dateTime({ autoCreate: true })
   declare createdAt: DateTime

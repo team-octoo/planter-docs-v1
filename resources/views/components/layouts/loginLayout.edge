@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ title }} - Planter Docs</title>
+    <meta name="description" content={{ descrption ? descrption : "Planter docs desc" }}>
+
+    @vite(['resources/css/reset.css', 'resources/css/app.css', 'resources/css/documentationLayout.css',
+    'resources/css/loginLayout.css'])
+</head>
+
+<body>
+
+    @include('partials/appNav')
+
+    <div class="pageWrapper">
+        <div class="loginContent">
+            <div class="loginMainContent">
+                {{{ await $slots.main() }}}
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

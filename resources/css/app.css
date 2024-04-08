@@ -81,3 +81,28 @@ pre {
 a {
   color: var(--text-color);
 }
+
+.formField {
+  margin-bottom: 1rem;
+  width: 100%;
+}
+.formField label {
+  font-size: 0.8rem;
+}
+.formField input {
+  width: 100%;
+  padding: 0.25rem 0.5rem;
+  border: solid 2px transparent;
+  border-radius: var(--border-radius);
+  background-color: var(--border-color);
+  color: var(--text-color);
+  outline: none;
+}
+
+.formField button {
+  padding: 0.25rem 0.5rem;
+  border: solid 2px transparent;
+  border-radius: var(--border-radius);
+  background-color: var(--border-color);
+  color: var(--text-color);
+}
