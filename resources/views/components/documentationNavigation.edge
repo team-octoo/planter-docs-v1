@@ -11,6 +11,8 @@
           route('docs.introduction') }}>Introduction</a></li>
       <li class={{ request.url()===route('docs.installation') ? 'activeNavItem' : '' }}><a href={{
           route('docs.installation') }}>Installation</a></li>
+      <li class={{ request.url()===route('docs.customisation') ? 'activeNavItem' : '' }}><a href={{
+          route('docs.customisation')}}>Configuration</a></li>
       <li class={{ request.url()===route('docs.releases') ? 'activeNavItem' : '' }}><a href={{
           route('docs.releases')}}>Releases</a></li>
       <li class={{ request.url()===route('docs.packages') ? 'activeNavItem' : '' }}><a href={{ route('docs.packages')

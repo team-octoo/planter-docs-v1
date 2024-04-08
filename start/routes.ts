@@ -18,6 +18,7 @@ router.on('/').render('pages/home').as('home')
 /* Documentation pages */
 router.get('/docs/introduction', [DocumentationsController, 'index']).as('docs.introduction')
 router.get('/docs/installation', [DocumentationsController, 'installation']).as('docs.installation')
+router.get('/docs/config', [DocumentationsController, 'customisation']).as('docs.customisation')
 router.get('/docs/releases', [DocumentationsController, 'releases']).as('docs.releases')
 router.get('/docs/packages', [DocumentationsController, 'packages']).as('docs.packages')
 
