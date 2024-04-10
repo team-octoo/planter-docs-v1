@@ -4,7 +4,7 @@
 {{-- --mobileOpenNav --}}
 
 <div class="documentationNavigationWrapper">
-  <details id="gettingStartedMenu">
+  <details id="gettingStartedMenu" {{ request.parsedUrl.pathname.includes('docs') ? 'open' : null }}>
     <summary>Getting started</summary>
     <ul class="detailNav">
       <li class={{ request.url()===route('docs.introduction') ? 'activeNavItem' : '' }}><a href={{
@@ -20,7 +20,7 @@
     </ul>
   </details>
 
-  <details id="communityMenu">
+  <details id="communityMenu" {{ request.parsedUrl.pathname.includes('community') ? 'open' : null }}>
     <summary>Community</summary>
     <ul class="detailNav">
       <li class={{ request.url()===route('community.prebuilds') ? 'activeNavItem' : '' }}><a href={{

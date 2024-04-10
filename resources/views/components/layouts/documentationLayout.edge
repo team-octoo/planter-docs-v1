@@ -16,8 +16,7 @@
 
   <div class="pageWrapper">
     <div class="docsNavigationWrapper">
-      {{-- @include('partials/documentationNavigation') --}}
-      @!component('components/documentationNavigation', {})
+      @!component('components/documentationNavigation')
     </div>
     <div class="pageContent">
       <div class="pageTitle">
@@ -32,10 +31,11 @@
         {{-- page footer here --}}
       </div>
     </div>
+
     <div class="pageNavigationWraper">
-      {{-- @include('partials/pageNavigation') --}}
-      @!component('components/pageNavigation', {pageNavItems: pageNavItems})
+      @!component('components/pageNavigation')
     </div>
+
   </div>
 </body>
 
