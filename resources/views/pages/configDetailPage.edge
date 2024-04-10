@@ -1,0 +1,5 @@
+@layouts.documentationLayout()
+<h2>{{ configDetail.title }}</h2>
+<p>{{ configDetail.description }}</p>
+{{ inspect(JSON.parse(configDetail.json)) }}
+@end

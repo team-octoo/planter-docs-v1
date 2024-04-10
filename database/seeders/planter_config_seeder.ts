@@ -6,7 +6,7 @@ export default class extends BaseSeeder {
     // Write your database queries inside the run method
     await PlanterConfig.createMany([
       {
-        title: 'BEM',
+        title: 'BEP',
         description: 'BEM example',
         json: '{}',
         userId: 1,
@@ -14,6 +14,13 @@ export default class extends BaseSeeder {
       {
         title: 'Atomic Design',
         description: 'Atomic Design example',
+        json: '{}',
+        userId: 1,
+      },
+      {
+        title: 'Another one with a longer title for purposes',
+        description:
+          'For some reason this also has a really long desciption. If you wanted to let the user know more about your config, this is the spot to do so.',
         json: '{}',
         userId: 1,
       },

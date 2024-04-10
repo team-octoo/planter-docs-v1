@@ -24,6 +24,9 @@ router.get('/docs/packages', [DocumentationsController, 'packages']).as('docs.pa
 
 /* Community pages */
 router.get('/community/prebuilds', [CommunitiesController, 'index']).as('community.prebuilds')
+router
+  .get('/community/prebuilds/:id', [CommunitiesController, 'show'])
+  .as('community.prebuilds.show')
 
 /* Admin & login pages */
 router.get('/login', [LoginController, 'index']).as('login')

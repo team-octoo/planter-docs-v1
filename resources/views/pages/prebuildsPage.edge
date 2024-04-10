@@ -1,3 +1,16 @@
+@vite('resources/css/prebuildsPage.css')
+
 @layouts.documentationLayout({ title: "Prebuilds" })
+
+@if(planterConfigs)
+<div class="configList">
+
+  @each(config in planterConfigs)
+
+  @!component('components/configCard', { configDetail: config })
+
+  @end
+</div>
+@end
 
 @end
