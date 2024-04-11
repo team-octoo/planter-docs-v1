@@ -42,6 +42,11 @@
     margin: 0 auto;
     max-width: 50vw;
   }
+
+  .--full-width > .pageMainContent, .pageContent > .pageTitle {
+    max-width: 100vw;
+    padding: 0 1rem;
+  }
 }
 
 /* Smartphone */

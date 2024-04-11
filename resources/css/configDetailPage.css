@@ -1,0 +1,36 @@
+.configDetailHeaderWrapper {
+  display: flex;
+}
+
+.configDetailHeaderWrapper > .configDetailHeaderContent {
+  flex: 1;
+  max-width: 80%;
+  padding-bottom: 2rem;
+}
+
+.configDetailHeaderWrapper > .configDetailHeaderUser {
+  flex: 1;
+  max-width: 20%;
+  text-align: right;
+  padding-top: .2rem;
+}
+
+.configDetailContent {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.treeWrapper {
+  flex: 1;
+}
+
+.configDetailJsonWrapper {
+  flex: 1;
+}
+
+@media screen and (min-width: 1600px) {
+  .configDetailContent {
+    flex-direction: row;
+  }
+}

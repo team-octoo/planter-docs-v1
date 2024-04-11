@@ -1,5 +1,26 @@
-@layouts.documentationLayout()
-<h2>{{ configDetail.title }}</h2>
-<p>{{ configDetail.description }}</p>
-{{ inspect(JSON.parse(configDetail.json)) }}
+@vite(['resources/css/reset.css', 'resources/css/app.css', 'resources/css/configDetailPage.css',
+'resources/js/config_detail_page.js'])
+
+@layouts.documentationLayout({ title: configDetail.title , fullWidth: true })
+
+<div class="configDetailHeaderWrapper">
+  <div class="configDetailHeaderContent">
+    <p>{{ configDetail.description }}</p>
+  </div>
+  <div class="configDetailHeaderUser">
+    <p>{{ configDetail?.user?.githubHandle ?? "" }}</p>
+  </div>
+</div>
+
+<div class="configDetailContent">
+  <div class="treeWrapper">
+    <div id="configTree">
+      tree here
+    </div>
+  </div>
+
+  <div class="configDetailJsonWrapper">
+    {{ inspect(JSON.parse(configDetail.json)) }}
+  </div>
+</div>
 @end

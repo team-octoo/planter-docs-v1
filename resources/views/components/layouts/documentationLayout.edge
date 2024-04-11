@@ -18,7 +18,7 @@
     <div class="docsNavigationWrapper">
       @!component('components/documentationNavigation')
     </div>
-    <div class="pageContent">
+    <div class="pageContent {{ fullWidth ? '--full-width' : null }}">
       <div class="pageTitle">
         @if(title)
         <h1>{{ title }}</h1>
