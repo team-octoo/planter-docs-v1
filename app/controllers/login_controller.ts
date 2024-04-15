@@ -24,11 +24,16 @@ export default class LoginController {
       await auth.use('web').login(user)
 
       /**
-       * Step 4: Send them to a protected route
+       * Step 4: Send them to a protected routeŒ
        */
       response.redirect('/admin/prebuilds')
     } catch (err) {
       return view.render('pages/admin/login', { loginError: true })
     }
+  }
+
+  async logout({ auth, response }: HttpContext) {
+    await auth.use('web').logout()
+    response.redirect('/admin/login')
   }
 }
