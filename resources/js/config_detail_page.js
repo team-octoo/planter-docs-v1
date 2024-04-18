@@ -15,7 +15,9 @@ function getRelevantValues(json, keys) {
   const relevantValues = {}
 
   keys.forEach((key) => {
-    relevantValues[key] = json[key]
+    if (json.hasOwnProperty(key)) {
+      relevantValues[key] = json[key]
+    }
   })
 
   return relevantValues

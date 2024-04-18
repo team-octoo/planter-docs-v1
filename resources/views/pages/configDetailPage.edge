@@ -5,10 +5,12 @@
 
 <div class="configDetailHeaderWrapper">
   <div class="configDetailHeaderContent">
-    <p>{{ configDetail.description }}</p>
+    <p>{{{ configDetail.description.replaceAll('\n', '<br />') }}}</p>
   </div>
   <div class="configDetailHeaderUser">
-    <p>{{ configDetail?.user?.githubHandle ?? "" }}</p>
+    <p><a target="_blank" href="https://github.com/{{ configDetail?.user?.githubHandle ?? "" }}">{{
+        configDetail?.user?.githubHandle ??
+        "" }}</a></p>
   </div>
 </div>
 

@@ -13,7 +13,7 @@ export default class extends BaseSeeder {
         email: env.get('ADMIN_EMAIL'),
         password: env.get('ADMIN_PASSWORD'),
         active: true,
-        githubHandle: 'josjos',
+        githubHandle: 'jozzeh',
       })
     }
   }
