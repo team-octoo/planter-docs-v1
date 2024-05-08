@@ -2,49 +2,58 @@
 'resources/js/app_navigation.js'])
 
 <div class="appNavigationWrapper">
-
-  <nav class="appNavigation">
-    <!-- logo -->
-    <div class="navSection logoContainer">
-      <a class="homeButton" href={{ route('home') }}>
-        {{ svg('mdi:plant-outline') }}
-        <span class="logoText">Planter</span>
-      </a>
-    </div>
-
-    <!-- search -->
-    <div class="navSection searchBarContainer">
-      <button id="searchBar" class="searchBar">
-        <span class="searchIcon">{{ svg('mdi:search') }}</span>
-        <span class="searchText">Search</span>
-      </button>
-    </div>
-
-    <!-- settings / other -->
-    <div class="navSection settingsContainer">
-      <div class="settings">
-        <a class="settingsItem" href="https://github.com/team-octoo/planter-docs-v1" target="_blank">{{
-          svg('mdi:github')
-          }}</a>
-        @!component('components/themeSwitcher', {})
+  <div class="paddingGlobal">
+    <nav class="appNavigation">
+      <!-- logo -->
+      <div class="navSection logoContainer">
+        <a class="homeButton" href={{ route('home') }}>
+          <?xml version="1.0" encoding="utf-8"?>
+          <svg width="50px" height="50px" version="1.1" viewBox="0 0 142 160" style="enable-background:new 0 0 142 160;" fill="none" x="0px" y="0px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M50.7622 33.1193C35.7294 24.6884 12.6938 23.6645 1.50724 24.409C0.110667 37.1016 0.694032 65.8505 14.2 79.3056C25.8454 90.9071 38.2777 91.4816 47.8451 87.965C47.8458 87.3217 47.8372 86.6909 47.8187 86.074C47.3125 69.1718 33.6683 52.874 26.9095 46.8378C33.7642 48.4671 49.5365 56.971 57.7875 77.9517C57.9839 78.4511 58.1724 78.9567 58.3532 79.4681C58.7152 78.0236 59.1118 76.602 59.545 75.2073C53.8265 69.0902 48.9408 60.2766 48.1073 50.1755C47.656 44.7049 48.401 38.9418 50.7622 33.1193ZM53.0822 34.5232C54.9418 35.7383 56.6446 37.0869 58.1452 38.5819C64.3272 44.7406 67.2691 50.9998 68.07 56.8725C65.7553 60.5776 63.6057 64.683 61.7096 69.22C61.2894 70.2254 60.8927 71.2505 60.5186 72.2933C60.5176 72.2923 60.5167 72.2912 60.5158 72.2901C52.8113 63.4312 47.2506 49.397 53.0822 34.5232Z" fill="#D6A129"/>
+              <path d="M140.718 0.483902C123.078 -1.06596 83.2017 0.223033 64.8179 17.7778C42.0408 39.5278 50.8885 62.9302 62.5807 74.4934C63.0687 73.046 63.5995 71.6306 64.1757 70.2518C75.7669 42.5167 97.032 31.6261 106.216 29.6477C97.0354 37.5033 78.3871 58.8436 77.2352 81.3606C77.1929 82.187 77.1635 83.0324 77.1464 83.8949C89.8017 88.8561 106.394 88.4442 122.249 73.3047C140.632 55.7498 142.222 17.443 140.718 0.483902Z" fill="currentColor"/>
+              <path d="M57.7855 77.9528C66.0365 98.9335 65.0649 130.575 65.0649 143.95L59.7149 133.25C57.7855 114.525 60.235 100.176 56.3617 85.1004C52.1538 68.7225 37.9141 49.4552 26.9075 46.839C33.7622 48.4683 49.5345 56.9722 57.7855 77.9528Z" fill="currentColor"/>
+              <path d="M64.179 70.2519C52.5878 97.9869 59.3387 142.176 64.179 160L73.0931 146.625C68.737 131.171 61.5492 98.7539 67.7431 77.0751C73.0931 58.35 91.8182 32.7502 106.219 29.6478C97.0353 31.6263 75.7702 42.5169 64.179 70.2519Z" fill="#D6A129"/>
+          </svg>
+          <span class="logoText">Planter</span>
+        </a>
       </div>
-      <div class="mobileSettings">
-        <button id="mobileSettingsButton">{{ svg('mdi:more-vert') }}</button>
-      </div>
-      <div class="mobileSettingsWrapper hidden">
-        <div class="mobileSettingsOverlay"></div>
-        <div class="mobileSettingsMenu">
-          <ul>
-            <li><a href="https://github.com/team-octoo/planter-docs-v1" target="_blank">Github</a></li>
-            <li>Login</li>
-            <hr />
-            <li>
-              <span>Theme: </span>
-              @!component('components/themeSwitcher', {})
-            </li>
-          </ul>
+
+      <div class="menuOptionsAndSettingsWrapper">
+        <!-- menu options / nav -->
+        <div class="menuOptions">
+          <a href="#">Docs</a>
+          <a href="#">Support</a>
+          <a href="#">Blog</a>
+          <a href="#">About</a>
+        </div>
+  
+        <!-- settings / other -->
+        <div class="navSection settingsContainer">
+          <div class="settings">
+            <a class="settingsItem" href="https://github.com/team-octoo/planter-docs-v1" target="_blank">{{ svg('mdi:github') }}</a>
+            @!component('components/themeSwitcher', {})
+          </div>
+  
+          <div class="mobileSettings">
+            <button id="mobileSettingsButton">{{ svg('mdi:more-vert') }}</button>
+          </div>
+          
+          <div class="mobileSettingsWrapper hidden">
+            <div class="mobileSettingsOverlay"></div>
+            <div class="mobileSettingsMenu">
+              <ul>
+                <li><a href="https://github.com/team-octoo/planter-docs-v1" target="_blank">Github</a></li>
+                <li>Login</li>
+                <hr />
+                <li>
+                  <span>Theme: </span>
+                  @!component('components/themeSwitcher', {})
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </nav>
+    </nav>
+  </div>
 </div>

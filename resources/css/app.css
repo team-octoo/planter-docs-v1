@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -8,31 +10,43 @@
   --page-title-font-size: 2rem;
   --section-title-font-size: 1.5rem;
   --section-subtitle-font-size: 1.2rem;
-  --text-font-size: 1rem;
+  --text-font-size: 0.9rem;
   /* colors */
   --background-color: #ffffff;
   --pre-background-color: #f1f1f1;
   --pre-text-color: #333;
   --text-color: #000000;
+  --text-selected-color: #D6A129;
+  --text-color-alternative: #444;
   --border-color: #d4d4d4;
   --border-color-hover: #a4a4a4;
   --primary-color: #78a083;
   --secondary-color: #50727b;
+  --card-background: #ffffff;
+  --button-color: #D6A129;
+  --button-color-hover: transparent;
+  --button-border-color: #D6A129;
+  --button-text-color: #ffffff;
+  --button-text-color-hover: #000000;
 
   /* dimensions */
   --appNavheight: 4rem;
   --border-radius: 0.375rem;
 
+  /* transitions */
   --transition-duration: 0.3s;
 }
 
 :root:has(#darkModeSwitch:checked) {
   --background-color: #1f1f1f;
+  --card-background: #1f1f1f;
   --text-color: #ffffff;
+  --text-color-alternative: #ffffff;
   --border-color: #35374b;
   --border-color-hover: #50727b;
   --pre-background-color: #111;
   --pre-text-color: #eee;
+  --button-text-color-hover: #ffffff;
 }
 
 html,
@@ -45,26 +59,44 @@ body {
 }
 
 h1 {
+  font-family: "Libre Franklin", "Arial", "Helvetica", sans-serif;
   font-size: var(--page-title-font-size);
+  color: var(--text-color);
   font-weight: 700;
   margin-bottom: 0.75rem;
 }
 
 h2 {
+  font-family: "Libre Franklin", "Arial", "Helvetica", sans-serif;
   font-size: var(--section-title-font-size);
-  font-weight: 700;
+  color: var(--text-color);
+  font-weight: 500;
   margin-bottom: 0.5rem;
 }
 
 h3 {
+  font-family: "Libre Franklin", "Arial", "Helvetica", sans-serif;
   font-size: var(--section-subtitle-font-size);
-  font-weight: 700;
+  color: var(--text-color);
+  font-weight: 600;
   margin-bottom: 0.25rem;
 }
 
-p {
+p, a, ul, ol, li {
+  font-family: "Libre Franklin", sans-serif;
   font-size: var(--text-font-size);
+  font-weight: 400;
+  color: var(--text-color-alternative);
+  text-decoration: none;
+}
+
+p, ul, ol {
+  line-height: 2rem;
   margin-bottom: 1rem;
+}
+
+ul, ol {
+  list-style-position: inside;
 }
 
 pre {
@@ -76,10 +108,6 @@ pre {
   white-space: -pre-wrap; /* Opera 4-6 */
   white-space: -o-pre-wrap; /* Opera 7 */
   word-wrap: break-word; /* Internet Explorer 5.5+ */
-}
-
-a {
-  color: var(--text-color);
 }
 
 .formField {
@@ -105,4 +133,35 @@ a {
   border-radius: var(--border-radius);
   background-color: var(--border-color);
   color: var(--text-color);
+}
+
+/* global style */
+
+.paddingGlobal {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15%;
+  padding-right: 15%;
+}
+
+@media (max-width: 991px) {
+  .paddingGlobal {
+    padding-left: 8%;
+    padding-right: 8%;
+  }
+}
+
+@media (max-width: 767px) {
+  .paddingGlobal {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+}
+
+@media (max-width: 478px) {
+  .paddingGlobal {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
 }

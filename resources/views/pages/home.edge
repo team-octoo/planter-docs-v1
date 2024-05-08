@@ -5,14 +5,86 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Planter</title>
+  @vite(['resources/css/home.css', 'resources/js/home.js'])
 </head>
 
 <body>
-  @include('partials/appNav')
+  <header>
+    @include('partials/appNav')
+  </header>
 
-  <div class="pageWrapper">
-    <a href={{ route('docs.introduction') }}>Documentation</a>
-  </div>
+  <section class="getStarted">
+    <div class="paddingGlobal">
+      <div class="containerMedium">
+        <h1>Set up your code base in record time</h1>
+        <p>Say goodbye to complicated gardening apps and hello to Planter - the simple and efficient command line interface for all your planting needs. Whether you're a seasoned gardener or just starting out, Planter has got you covered.</p>
+        <ul>
+          <li>Installs a new react or react-native project</li>
+          <li>Sets up a basic folder structure (of your choice)</li>
+          <li>Add commonly used packages</li>
+          <li>Give command to easily create state, components & other functions</li>
+          <li>Writes documentation for proposed structures & packages</li>
+        </ul>
+        <a href="{{ route('docs.introduction') }}" class="getStartedButton">Get Started</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="codeFragmentSection">
+    <div class="paddingGlobal">
+      <div class="containerMedium">
+        @component('components/codeSwitcher', {
+          codeSwitcherId: 1,
+          title1: 'Browser testing', code1: 'test1',
+          title2: 'Open API tests', code2: 'test2',
+          title3: 'Trap outgoing mails', code3: 'test3',
+          title4: 'Command-line tests', code4: 'test4'
+        })
+        @end
+      </div>
+    </div>
+  </section>
+
+  <section class="cardSection">
+    <div class="paddingGlobal">
+      <div class="containerMedium">
+        <div class="cardWrapper">
+          @!component('components/benefitCard', {icon: 'mdi--speedometer', title: 'Boosted Efficiency', text: 'We pay a closer look at type-safety, seamless intellisense, and support for auto imports when designing framework APIs'})
+          @!component('components/benefitCard', {icon: 'mdi--rocket-launch', title: 'Optimized Workflow', text: 'We ship one of the fastest validation libraries, and our HTTP server has performance on par with Fastify'})
+          @!component('components/benefitCard', {icon: 'mdi--menu', title: 'Streamlined Development', text: 'We pay a closer look at type-safety, seamless intellisense, and support for auto imports when designing framework APIs'})
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="testSection">
+    <div class="paddingGlobal">
+      <div class="containerMedium">
+        <h2>World-class testing experience</h2>
+        @component('components/codeSwitcher', {
+          codeSwitcherId: 2,
+          title1: 'Browser testing', code1: 'test1',
+          title2: 'Open API tests', code2: 'test2',
+          title3: 'Trap outgoing mails', code3: 'test3',
+          title4: 'Command-line tests', code4: 'test4'
+        })
+        @end
+      </div>
+    </div>
+  </section>
+
+  <section class="packageSection">
+    <div class="paddingGlobal">
+      <div class="containerMedium">
+        <h2>Packages</h2>
+        <div class="cardWrapper">
+          @!component('components/packageCard', {linkToPackage: '#', title: 'Error Boundary', text: 'Use this package to make your life easier and code like a god.'})
+          @!component('components/packageCard', {linkToPackage: '#', title: 'Error Boundary', text: 'Use this package to make your life easier and code like a god.'})
+          @!component('components/packageCard', {linkToPackage: '#', title: 'Error Boundary', text: 'Use this package to make your life easier and code like a god.'})
+          @!component('components/packageCard', {linkToPackage: '#', title: 'Error Boundary', text: 'Use this package to make your life easier and code like a god.'})
+        </div>
+      </div>
+    </div>
+  </section>
 </body>
-
 </html>

@@ -1,0 +1,24 @@
+@vite(['resources/js/codeSwitcher.js'])
+
+<div class="codeSwitcher" id={{ codeSwitcherId }}>
+    <ul class="codeSwitcherTitles">
+      <li class="codeSwitcherTitle">{{ title1 }}</li>
+      <li class="codeSwitcherTitle">{{ title2 }}</li>
+      <li class="codeSwitcherTitle">{{ title3 }}</li>
+      <li class="codeSwitcherTitle">{{ title4 }}</li>
+    </ul>
+    <div class="codeSwitcherPres">
+      <div class="codeSwitcherPre">
+        <pre>{{ code1 }}</pre>
+      </div>
+      <div class="codeSwitcherPre hidden">
+        <pre>{{ code2 }}</pre>
+      </div>
+      <div class="codeSwitcherPre hidden">
+        <pre>{{ code3 }}</pre>
+      </div>
+      <div class="codeSwitcherPre hidden">
+        <pre>{{ code4 }}</pre>
+      </div>
+    </div>
+</div>

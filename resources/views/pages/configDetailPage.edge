@@ -19,13 +19,13 @@
     <div id="configTree"></div>
   </div>
 
-
   <div class="configDetailJsonContainer">
     <div class="configJsonHeader">
       <button id="copyConfigButton">{{ svg('mdi:content-copy') }} <span
           class="copyConfigButtonLabel">Copy</span></button>
     </div>
     <div class="configDetailJsonWrapper">
+      <!-- the inspect function is only used to display code -->
       {{ inspect(JSON.parse(configDetail.json)) }}
     </div>
   </div>

@@ -19,12 +19,10 @@
       @!component('components/documentationNavigation')
     </div>
     <div class="pageContent {{ fullWidth ? '--full-width' : null }}">
-      <div class="pageTitle">
+      <div class="pageMainContent">
         @if(title)
         <h1>{{ title }}</h1>
         @end
-      </div>
-      <div class="pageMainContent">
         {{{ await $slots.main() }}}
       </div>
       <div class="pageFooter">
