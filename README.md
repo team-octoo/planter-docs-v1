@@ -1,5 +1,12 @@
 # Planter documentation website
 
+## Setup project
+
+1. add tmp folder in the root directory
+2. run ```node ace migration:run```
+3. run ```node ace db:seed```
+4. run ```yarn dev``` to start up the development server
+
 ## Dependencies
 
 ### Bootstrap grid
