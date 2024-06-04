@@ -1,0 +1,36 @@
+@vite('resources/css/dashboardPage.css')
+
+@layouts.accountLayout({ title: "Account settings" })
+
+<form>
+    {{csrfField()}}
+    <div class="formField">
+        <label for="firstName">Firstname</label>
+        <input type="text" id="firstName" name="firstName" value={{firstName}} required autofocus>
+    </div>
+    <div class="formField">
+        <label for="lastName">Lastname</label>
+        <input type="text" id="lastName" name="lastName" value={{lastName}} required>
+    </div>
+    <div class="formField">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" value={{email}} required>
+    </div>
+    <div class="formField">
+        <label for="oldPassword">Old password</label>
+        <input type="password" id="oldPassword" name="oldPassword" required>
+    </div>
+    <div class="formField">
+        <label for="newPassword">New password</label>
+        <input type="password" id="newPassword" name="newPassword">
+    </div>
+    <div class="formField">
+        <label for="confirmNewPassword">Confirm new password</label>
+        <input type="password" id="confirmNewPassword" name="confirmNewPassword">
+    </div>
+    <div class="updateButton">
+        <button type="submit">UPDATE ACCOUNT</button>
+    </div>
+</form>
+
+@end

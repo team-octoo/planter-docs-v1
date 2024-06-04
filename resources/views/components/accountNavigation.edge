@@ -1,0 +1,27 @@
+@vite(['resources/css/reset.css', 'resources/css/app.css', 'resources/css/accountNavigation.css',
+'resources/js/documentation_navigation.js'])
+
+{{-- --mobileOpenNav --}}
+
+<div class="documentationNavigationWrapper">
+    <details id="gettingStartedMenu" {{ request.parsedUrl.pathname.includes('docs') ? 'open' : 'open' }}>
+        <summary>Account navigation</summary>
+        <ul class="detailNav">
+            <li class={{ request.url()===route('admin.dashboard') ? 'activeNavItem' : '' }}><a href={{
+                    route('admin.dashboard') }}>Dashboard</a></li>
+            <li class={{ request.url()===route('admin.active') ? 'activeNavItem' : '' }}><a href={{
+                    route('admin.active') }}>Active builds</a></li>
+            <li class={{ request.url()===route('admin.archived') ? 'activeNavItem' : '' }}><a href={{
+                    route('admin.archived')}}>Archived builds</a></li>
+            <li class={{ request.url()===route('admin.account') ? 'activeNavItem' : '' }}><a href={{
+                    route('admin.account')}}>Account settings</a></li>
+        </ul>
+    </details>
+</div>
+
+<div id="mobileDocsNavOverlay"></div>
+
+<div id="mobileDocsNavButton">
+    {{ svg('mdi:menu') }}
+    <span>Menu</span>
+</div>

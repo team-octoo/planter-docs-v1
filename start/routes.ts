@@ -31,4 +31,19 @@ router
 /* Admin & login pages */
 router.get('/login', [LoginController, 'index']).as('login')
 router.post('/login', [LoginController, 'post']).as('login.post')
-router.get('/admin/prebuilds', [AdminController, 'index']).middleware(middleware.auth())
+router
+  .get('/admin/dashboard', [AdminController, 'index'])
+  .middleware(middleware.auth())
+  .as('admin.dashboard')
+router
+  .get('/admin/active', [AdminController, 'active'])
+  .middleware(middleware.auth())
+  .as('admin.active')
+router
+  .get('/admin/archived', [AdminController, 'archived'])
+  .middleware(middleware.auth())
+  .as('admin.archived')
+router
+  .get('/admin/account', [AdminController, 'account'])
+  .middleware(middleware.auth())
+  .as('admin.account')

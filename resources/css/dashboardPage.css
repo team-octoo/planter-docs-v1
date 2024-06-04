@@ -1,0 +1,48 @@
+.widgetContainer{
+    display: flex;
+    margin-top: 3rem;
+    gap: 1rem;
+}
+
+.widget{
+    width: 100%;
+    max-width: calc(33.3333% - 1rem);
+    background-color: var(--pre-background-color);
+    border-color: var(--border-color);
+    border-width: 0.15rem;
+    border-style: solid;
+    border-radius: var(--border-radius);
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.widgetNumber{
+    font-size: 2rem;
+}
+
+.widgetDescription{
+    font-size: 0.8rem;
+    color: var(--pre-text-color);
+    margin-bottom: -0.1rem;
+    margin-top: -0.6rem;
+}
+
+.recentBuildsContainer{
+    margin-top: 4rem;
+}
+
+.configList {
+  display: flex;
+  align-items: center;
+  /* padding: 1rem; */
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.updateButton button{
+  padding: 0.25rem 0.5rem;
+  border: solid 2px transparent;
+  border-radius: var(--border-radius);
+  background-color: var(--primary-color);
+  color: white;
+}

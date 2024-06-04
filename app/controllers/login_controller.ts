@@ -26,7 +26,7 @@ export default class LoginController {
       /**
        * Step 4: Send them to a protected routeŒ
        */
-      response.redirect('/admin/prebuilds')
+      response.redirect('/admin/dashboard')
     } catch (err) {
       return view.render('pages/admin/login', { loginError: true })
     }

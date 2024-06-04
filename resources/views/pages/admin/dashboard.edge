@@ -1,0 +1,34 @@
+@vite('resources/css/dashboardPage.css')
+
+@layouts.accountLayout({ title: "Welcome to your dashboard", name: firstName })
+
+<div class="widgetContainer">
+    <div class="widget">
+        <h4 class="widgetNumber">{{planterConfigs.length}}</h4>
+        <p class="widgetDescription">Total builds</p>
+    </div>
+    <div class="widget">
+        <h4 class="widgetNumber">{{planterConfigs.length}}</h4>
+        <p class="widgetDescription">Active builds</p>
+    </div>
+    <div class="widget">
+        <h4 class="widgetNumber">0</h4>
+        <p class="widgetDescription">Archived builds</p>
+    </div>
+</div>
+
+<div class="recentBuildsContainer">
+    <h2>Recent builds</h2>
+    @if(recentConfigs)
+    <div class="configList">
+
+        @each(config in recentConfigs)
+
+        @!component('components/configCard', { configDetail: config })
+
+        @end
+    </div>
+    @end
+</div>
+
+@end

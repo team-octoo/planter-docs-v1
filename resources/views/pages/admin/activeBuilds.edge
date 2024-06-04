@@ -1,0 +1,20 @@
+@vite('resources/css/prebuildsPage.css')
+
+@layouts.accountLayout({ title: "Active builds" })
+
+@if(planterConfigs.length > 0)
+<div class="configList">
+
+    @each(config in planterConfigs)
+    @if(config.userId == id)
+
+    @!component('components/configCard', { configDetail: config })
+
+    @endif
+    @end
+</div>
+@else
+<div>You don't have any active builds...</div>
+@end
+
+@end
