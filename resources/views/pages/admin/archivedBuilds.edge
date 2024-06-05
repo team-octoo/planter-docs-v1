@@ -2,6 +2,19 @@
 
 @layouts.accountLayout({ title: "Archived builds" })
 
+@if(archivedConfigs.length > 0)
+<div class="configList">
+
+    @each(config in archivedConfigs)
+    @if(config.userId == id)
+
+    @!component('components/configCard', { configDetail: config })
+
+    @endif
+    @end
+</div>
+@else
 <div>You don't have any archived builds...</div>
+@end
 
 @end

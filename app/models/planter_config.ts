@@ -19,6 +19,9 @@ export default class PlanterConfig extends BaseModel {
   @column()
   declare userId: number
 
+  @column()
+  declare isActive: boolean
+
   @belongsTo(() => User)
   declare user: BelongsTo<typeof User>
 

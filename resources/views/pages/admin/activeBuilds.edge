@@ -2,10 +2,10 @@
 
 @layouts.accountLayout({ title: "Active builds" })
 
-@if(planterConfigs.length > 0)
+@if(activeConfigs.length > 0)
 <div class="configList">
 
-    @each(config in planterConfigs)
+    @each(config in activeConfigs)
     @if(config.userId == id)
 
     @!component('components/configCard', { configDetail: config })

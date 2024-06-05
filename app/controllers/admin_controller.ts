@@ -6,28 +6,51 @@ export default class AdminController {
     const id = auth.user?.$getAttribute('id')
     const firstName = auth.user?.$getAttribute('firstName')
     const allConfigs = await PlanterConfig.query().preload('user').where('user_id', id)
-    const recentConfigs = await PlanterConfig.query().where('user_id', id).limit(3)
+    const onlineConfigs = await PlanterConfig.query()
+      .preload('user')
+      .where('user_id', id)
+      .where('is_active', true)
+    const archivedConfigs = await PlanterConfig.query()
+      .preload('user')
+      .where('user_id', id)
+      .where('is_active', false)
+    const recentConfigs = await PlanterConfig.query()
+      .preload('user')
+      .where('user_id', id)
+      .where('is_active', true)
+      .orderBy('updated_at', 'desc')
+      .limit(3)
     return view.render('pages/admin/dashboard', {
       planterConfigs: allConfigs,
       id: id,
       firstName: firstName,
       recentConfigs: recentConfigs,
+      onlineConfigs: onlineConfigs,
+      archivedConfigs: archivedConfigs,
     })
   }
 
   async active({ view, auth }: HttpContext) {
     const id = auth.user?.$getAttribute('id')
-    const allConfigs = await PlanterConfig.query().preload('user').where('user_id', id)
+    const onlineConfigs = await PlanterConfig.query()
+      .preload('user')
+      .where('user_id', id)
+      .where('is_active', true)
     return view.render('pages/admin/activeBuilds', {
-      planterConfigs: allConfigs,
+      activeConfigs: onlineConfigs,
       id: id,
     })
   }
 
   async archived({ view, auth }: HttpContext) {
     const id = auth.user?.$getAttribute('id')
+    const archivedConfigs = await PlanterConfig.query()
+      .preload('user')
+      .where('user_id', id)
+      .where('is_active', false)
     return view.render('pages/admin/archivedBuilds', {
       id: id,
+      archivedConfigs: archivedConfigs,
     })
   }
 
