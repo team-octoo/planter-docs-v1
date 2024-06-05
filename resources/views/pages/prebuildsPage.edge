@@ -7,7 +7,7 @@
 
   @each(config in planterConfigs)
 
-  @!component('components/configCard', { configDetail: config })
+  @!component('components/configCard', { configDetail: config, admin: false })
 
   @end
 </div>

@@ -47,3 +47,11 @@ router
   .get('/admin/account', [AdminController, 'account'])
   .middleware(middleware.auth())
   .as('admin.account')
+router.get('/admin/prebuilds/:id', [AdminController, 'show']).as('admin.prebuilds.show')
+router
+  .post('/admin/prebuilds/:id', [AdminController, 'updateActive'])
+  .as('admin.prebuilds.updateActive')
+router
+  .delete('/admin/prebuilds/:id', [AdminController, 'deletePrebuild'])
+  .as('admin.prebuilds.delete')
+router.get('/admin/newBuild', [AdminController, 'newBuild']).as('admin.newBuild')

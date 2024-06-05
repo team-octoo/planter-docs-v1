@@ -1,0 +1,28 @@
+@vite('resources/css/newBuild.css')
+
+@layouts.accountLayout({
+title: 'Create a new build'})
+
+<form method="POST" action="{{ route('login.post') }}">
+    {{csrfField()}}
+    <div class="formField">
+        <label for="title">Title</label>
+        <input type="text" id="title" name="title" required autofocus>
+    </div>
+    <div class="formField">
+        <label for="summary">Summary</label>
+        <input type="text" id="summary" name="summary" required>
+    </div>
+    <div class="formField description">
+        <label for="description">Description</label>
+        <input type="text" id="description" name="description" required>
+    </div>
+    <div class="formField">
+        <label for="config">Config</label>
+        <input type="text" id="config" name="config" required>
+    </div>
+    <div class="formField">
+        <button type="submit">Create</button>
+    </div>
+</form>
+@end

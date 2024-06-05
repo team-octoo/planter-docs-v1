@@ -24,7 +24,7 @@
 
         @each(config in recentConfigs)
 
-        @!component('components/configCard', { configDetail: config })
+        @!component('components/configCard', { configDetail: config, admin: true })
 
         @end
     </div>

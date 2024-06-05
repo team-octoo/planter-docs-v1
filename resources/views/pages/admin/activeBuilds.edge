@@ -1,6 +1,6 @@
 @vite('resources/css/prebuildsPage.css')
 
-@layouts.accountLayout({ title: "Active builds" })
+@layouts.accountLayout({ title: "Active builds", active: true })
 
 @if(activeConfigs.length > 0)
 <div class="configList">
@@ -8,7 +8,7 @@
     @each(config in activeConfigs)
     @if(config.userId == id)
 
-    @!component('components/configCard', { configDetail: config })
+    @!component('components/configCard', { configDetail: config, admin: true })
 
     @endif
     @end

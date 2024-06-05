@@ -1,0 +1,35 @@
+@vite(['resources/css/reset.css', 'resources/css/app.css', 'resources/css/configDetailPage.css',
+'resources/js/config_detail_page.js'])
+
+@layouts.accountLayout({ title: configDetail.title , fullWidth: true, edit:true, online: configDetail.isActive, id:
+configDetail.id})
+
+<div class="configDetailHeaderWrapper">
+    <div class="configDetailHeaderContent">
+        <p>{{{ configDetail.description.replaceAll('\n', '<br />') }}}</p>
+    </div>
+    <div class="configDetailHeaderUser">
+        <p><a target="_blank" href="https://github.com/{{ configDetail?.user?.githubHandle ?? "" }}">{{
+                configDetail?.user?.githubHandle ??
+                "" }}</a></p>
+    </div>
+</div>
+
+<div class="configDetailContent">
+    <div class="treeWrapper">
+        <div id="configTree"></div>
+    </div>
+
+    <div class="configDetailJsonContainer">
+        <div class="configJsonHeader">
+            <button id="copyConfigButton">{{ svg('mdi:content-copy') }} <span
+                    class="copyConfigButtonLabel">Copy</span></button>
+        </div>
+        <div class="configDetailJsonWrapper">
+            <!-- the inspect function is only used to display code -->
+            {{ inspect(JSON.parse(configDetail.json)) }}
+        </div>
+    </div>
+
+</div>
+@end

@@ -7,7 +7,7 @@
     <title>{{ title }} - Planter Docs</title>
     <meta name="description" content={{ descrption ? descrption : "Planter docs desc" }}>
 
-    @vite(['resources/css/reset.css', 'resources/css/app.css', 'resources/css/documentationLayout.css'])
+    @vite(['resources/css/reset.css', 'resources/css/app.css', 'resources/css/accountLayout.css'])
 </head>
 
 <body>
@@ -20,7 +20,38 @@
         </div>
         <div class="pageContent {{ fullWidth ? '--full-width' : null }}">
             <div class="pageMainContent">
-                @if(title)
+                @if(edit == true)
+                <div class="adminTitleContainer">
+                    <h1>{{title}}</h1>
+                    <div class="adminButtonsContainer">
+                        <button>edit</button>
+                        @if(online == true)
+                        <form action="/admin/prebuilds/{{id}}" method="POST">
+                            {{csrfField()}}
+                            <input type="hidden" name="isActive" value={{online}}>
+                            <button type="submit">archive</button>
+                        </form>
+                        @elseif(online == false)
+                        <form action="/admin/prebuilds/{{id}}" method="POST">
+                            {{csrfField()}}
+                            <input type="hidden" name="isActive" value={{online}}>
+                            <button type="submit">publish</button>
+                        </form>
+                        <form action="/admin/prebuilds/{{id}}" method="DELETE">
+                            {{csrfField()}}
+                            <input type="hidden">
+                            <button type="submit">delete</button>
+                        </form>
+                        @endif
+                    </div>
+                </div>
+                @elseif(active == true)
+                <div class="adminTitleContainer">
+                    <h1>Active builds</h1>
+                    <a href="/admin/newBuild">new build</a>
+                </div>
+                @endif
+                @if(title && !active && !edit)
                 <h1>{{ title }}</h1>
                 @if(name)
                 <h1>{{name}}</h1>

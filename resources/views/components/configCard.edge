@@ -1,15 +1,19 @@
 @vite(['resources/css/reset.css', 'resources/css/app.css', 'resources/css/configCard.css'])
 
+@if(admin == false)
 <a class="configCardContainer" href="/community/prebuilds/{{ configDetail.id }}">
-  <div class="titleWrapper">
-    <h3>{{ configDetail.title }}</h3>
-  </div>
-  <div class="contentWrapper">
-    <div class="infoWrapper">
-      <span>{{ configDetail?.user?.githubHandle }}</span>
+  @elseif(admin == true)
+  <a class="configCardContainer" href="/admin/prebuilds/{{ configDetail.id }}">
+    @endif
+    <div class="titleWrapper">
+      <h3>{{ configDetail.title }}</h3>
     </div>
-    <div class="descriptionWrapper">
-      {{ configDetail.description }}
+    <div class="contentWrapper">
+      <div class="infoWrapper">
+        <span>{{ configDetail?.user?.githubHandle }}</span>
+      </div>
+      <div class="descriptionWrapper">
+        {{ configDetail.description }}
+      </div>
     </div>
-  </div>
-</a>
+  </a>

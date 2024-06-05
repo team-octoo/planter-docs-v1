@@ -8,7 +8,7 @@
     @each(config in archivedConfigs)
     @if(config.userId == id)
 
-    @!component('components/configCard', { configDetail: config })
+    @!component('components/configCard', { configDetail: config, admin: true })
 
     @endif
     @end
