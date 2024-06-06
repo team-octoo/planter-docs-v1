@@ -127,6 +127,17 @@ pre {
   outline: none;
 }
 
+.formField textarea {
+  width: 100%;
+  height: 8rem;
+  padding: 0.25rem 0.5rem;
+  border: solid 2px transparent;
+  border-radius: var(--border-radius);
+  background-color: var(--border-color);
+  color: var(--text-color);
+  outline: none;
+}
+
 .formField button {
   padding: 0.25rem 0.5rem;
   border: solid 2px transparent;

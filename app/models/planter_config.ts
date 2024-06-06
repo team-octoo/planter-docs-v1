@@ -13,8 +13,10 @@ export default class PlanterConfig extends BaseModel {
   @column()
   declare description: string
 
-  @column()
-  declare json: string
+  @column({
+    prepare: (value) => JSON.stringify(value),
+  })
+  declare json: object
 
   @column()
   declare userId: number

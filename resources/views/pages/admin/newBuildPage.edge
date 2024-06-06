@@ -1,28 +1,48 @@
-@vite('resources/css/newBuild.css')
+@vite(['resources/css/newBuildPage.css'])
 
 @layouts.accountLayout({
 title: 'Create a new build'})
-
-<form method="POST" action="{{ route('login.post') }}">
-    {{csrfField()}}
-    <div class="formField">
-        <label for="title">Title</label>
-        <input type="text" id="title" name="title" required autofocus>
-    </div>
-    <div class="formField">
-        <label for="summary">Summary</label>
-        <input type="text" id="summary" name="summary" required>
-    </div>
-    <div class="formField description">
-        <label for="description">Description</label>
-        <input type="text" id="description" name="description" required>
-    </div>
-    <div class="formField">
-        <label for="config">Config</label>
-        <input type="text" id="config" name="config" required>
-    </div>
-    <div class="formField">
-        <button type="submit">Create</button>
-    </div>
-</form>
-@end
+@if(update==true)
+<form method="POST" action="/admin/updateBuild/{{id}}">
+    @elseif(update==false || !update)
+    <form method="POST" action="{{ route('admin.newBuild.post') }}">
+        @endif
+        {{csrfField()}}
+        @if(errors)
+        <div class="errorsContainer">
+            <p>there was an error creating the build: {{errors}}</p>
+        </div>
+        @endif
+        <div class="formField">
+            <label for="title">Title</label>
+            @if(title)
+            <input type="text" id="title" name="title" required value="{{title}}" autofocus>
+            @elseif(!title)
+            <input type="text" id="title" name="title" required autofocus>
+            @endif
+        </div>
+        <div class="formField description">
+            <label for="description">Description</label>
+            @if(description)
+            <textarea type="text" id="description" name="description" required>{{description}}</textarea>
+            @elseif(!description)
+            <textarea type="text" id="description" name="description" required></textarea>
+            @endif
+        </div>
+        <div class="formField">
+            <label for="config">Configuration file</label>
+            @if(configFile)
+            <textarea type="text" id="config" name="config" required>{{configFile}}</textarea>
+            @elseif(!configFile)
+            <textarea type="text" id="config" name="config" required></textarea>
+            @endif
+        </div>
+        <div class="formField">
+            @if(update==true)
+            <button type="submit">Update</button>
+            @elseif(update==false || !update)
+            <button type="submit">Create</button>
+            @endif
+        </div>
+    </form>
+    @end

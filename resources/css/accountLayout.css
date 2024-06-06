@@ -41,6 +41,18 @@
     gap: 1rem;
 }
 
+.buttonWithIcon{
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.15rem 0.5rem;
+  color: var(--text-color);
+  background-color: var(--border-color);
+  border-color: var(--border-color);
+  border: solid 2px transparent;
+  border-radius: var(--border-radius);
+}
+
 /* Desktop */
 @media screen and (min-width: 1280px) {
   .pageNavigationWraper {

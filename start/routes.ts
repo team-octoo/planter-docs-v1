@@ -47,11 +47,25 @@ router
   .get('/admin/account', [AdminController, 'account'])
   .middleware(middleware.auth())
   .as('admin.account')
-router.get('/admin/prebuilds/:id', [AdminController, 'show']).as('admin.prebuilds.show')
+router
+  .get('/admin/prebuilds/:id', [AdminController, 'show'])
+  .middleware(middleware.auth())
+  .as('admin.prebuilds.show')
 router
   .post('/admin/prebuilds/:id', [AdminController, 'updateActive'])
+  .middleware(middleware.auth())
   .as('admin.prebuilds.updateActive')
 router
-  .delete('/admin/prebuilds/:id', [AdminController, 'deletePrebuild'])
+  .post('/admin/prebuilds/del/:id', [AdminController, 'deletePrebuild'])
+  .middleware(middleware.auth())
   .as('admin.prebuilds.delete')
-router.get('/admin/newBuild', [AdminController, 'newBuild']).as('admin.newBuild')
+router
+  .get('/admin/newBuild', [AdminController, 'newBuild'])
+  .middleware(middleware.auth())
+  .as('admin.newBuild')
+router
+  .post('/admin/newBuild', [AdminController, 'createBuild'])
+  .middleware(middleware.auth())
+  .as('admin.newBuild.post')
+router.get('/admin/prebuilds/edit/:id', [AdminController, 'edit']).as('admin.prebuilds.edit')
+router.post('/admin/updateBuild/:id', [AdminController, 'updateBuild']).as('admin.updateBuild')

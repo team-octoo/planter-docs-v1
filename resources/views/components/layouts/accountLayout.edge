@@ -24,23 +24,27 @@
                 <div class="adminTitleContainer">
                     <h1>{{title}}</h1>
                     <div class="adminButtonsContainer">
-                        <button>edit</button>
+                        <form action="/admin/prebuilds/edit/{{id}}" method="GET">
+                            <button class="buttonWithIcon" type="submit">{{ svg('mdi:edit') }}edit</button>
+                        </form>
                         @if(online == true)
                         <form action="/admin/prebuilds/{{id}}" method="POST">
                             {{csrfField()}}
                             <input type="hidden" name="isActive" value={{online}}>
-                            <button type="submit">archive</button>
+                            <button class="buttonWithIcon" type="submit">{{ svg('mdi:archive') }}archive</button>
                         </form>
                         @elseif(online == false)
                         <form action="/admin/prebuilds/{{id}}" method="POST">
                             {{csrfField()}}
                             <input type="hidden" name="isActive" value={{online}}>
-                            <button type="submit">publish</button>
+                            <button class="buttonWithIcon" type="submit">{{ svg('mdi:publish') }}publish</button>
                         </form>
-                        <form action="/admin/prebuilds/{{id}}" method="DELETE">
+                        <form action="/admin/prebuilds/del/{{id}}" method="POST">
                             {{csrfField()}}
-                            <input type="hidden">
-                            <button type="submit">delete</button>
+                            <div>
+                                <input type="hidden">
+                                <button class="buttonWithIcon" type="submit">{{ svg('mdi:delete') }} delete</button>
+                            </div>
                         </form>
                         @endif
                     </div>
