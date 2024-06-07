@@ -1,5 +1,4 @@
-@vite(['resources/css/reset.css', 'resources/css/app.css', 'resources/css/accountNavigation.css',
-'resources/js/documentation_navigation.js'])
+@vite(['resources/css/reset.css', 'resources/css/app.css', 'resources/css/accountNavigation.css'])
 
 {{-- --mobileOpenNav --}}
 
@@ -17,6 +16,10 @@
                     route('admin.account')}}>Account settings</a></li>
         </ul>
     </details>
+    <form action="{{route('admin.logout')}}" method="POST">
+        {{csrfField()}}
+        <button class="signOutButton" type="submit">SIGN OUT</button>
+    </form>
 </div>
 
 <div id="mobileDocsNavOverlay"></div>

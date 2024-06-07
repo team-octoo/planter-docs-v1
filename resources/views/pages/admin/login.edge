@@ -1,3 +1,5 @@
+@vite(['/resources/css/loginLayout.css'])
+
 @layouts.loginLayout()
 <h1>Login</h1>
 <form method="POST" action="{{ route('login.post') }}">
@@ -9,6 +11,10 @@
     <div class="formField">
         <label for="password">Password</label>
         <input type="password" id="password" name="password" required>
+    </div>
+    <div class="authTextRouting">
+        <p>Don't have an account yet?</p>
+        <a href="{{route('register')}}">Register here</a>
     </div>
     <div class="formField">
         <button type="submit">Login</button>

@@ -1,4 +1,5 @@
 import User from '#models/user'
+import { registerValidator, userValidator } from '#validators/register'
 import type { HttpContext } from '@adonisjs/core/http'
 
 export default class LoginController {
@@ -34,6 +35,45 @@ export default class LoginController {
 
   async logout({ auth, response }: HttpContext) {
     await auth.use('web').logout()
-    response.redirect('/admin/login')
+    response.redirect('/login')
+  }
+
+  async register({ view }: HttpContext) {
+    return view.render('pages/admin/register')
+  }
+
+  async showPassword({ view, request }: HttpContext) {
+    try {
+      const user = new User()
+      user.email = request.input('email')
+      user.firstName = request.input('firstName')
+      user.lastName = request.input('lastName')
+      user.githubHandle = request.input('githubHandle')
+      await userValidator.validate(user)
+      return view.render('pages/admin/password', {
+        firstName: user.firstName,
+        lastName: user.lastName,
+        githubHandle: user.githubHandle,
+        email: user.email,
+      })
+    } catch (err) {
+      return view.render('pages/admin/register', {
+        firstName: request.input('firstName'),
+        lastName: request.input('lastName'),
+        githubHandle: request.input('githubHandle'),
+        email: request.input('email'),
+        error: true,
+      })
+    }
+  }
+
+  async registerPost({ auth, response, request }: HttpContext) {
+    const data = await request.validateUsing(registerValidator)
+
+    const user = await User.create(data)
+
+    await auth.use('web').login(user)
+
+    return response.redirect('/admin/dashboard')
   }
 }

@@ -1,3 +1,11 @@
+.documentationNavigationWrapper {
+  display:flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  border-radius: var(--border-radius);
+  height: 100%;
+}
+
 .documentationNavigationWrapper > details {
   margin-bottom: 1rem;
 }
@@ -47,6 +55,21 @@
 
 .detailNav li:hover a {
   color: var(--primary-color)
+}
+
+.signOutButton{
+  background-color: var( --light-red);
+  color: white;
+  border: none;
+  padding: 1rem;
+  width: 80%;
+  align-self: center;
+  text-align: center;
+  cursor: pointer;
+  border-radius: var(--border-radius);
+  position:absolute;
+  bottom: 2rem;
+  margin-left: 10%;
 }
 
 #mobileDocsNavButton {

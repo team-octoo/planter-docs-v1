@@ -31,6 +31,9 @@ router
 /* Admin & login pages */
 router.get('/login', [LoginController, 'index']).as('login')
 router.post('/login', [LoginController, 'post']).as('login.post')
+router.get('/register', [LoginController, 'register']).as('register')
+router.post('/password', [LoginController, 'showPassword']).as('password.show')
+router.post('/register', [LoginController, 'registerPost']).as('password.post')
 router
   .get('/admin/dashboard', [AdminController, 'index'])
   .middleware(middleware.auth())
@@ -69,3 +72,4 @@ router
   .as('admin.newBuild.post')
 router.get('/admin/prebuilds/edit/:id', [AdminController, 'edit']).as('admin.prebuilds.edit')
 router.post('/admin/updateBuild/:id', [AdminController, 'updateBuild']).as('admin.updateBuild')
+router.post('/admin/signOut', [LoginController, 'logout']).as('admin.logout').use(middleware.auth())

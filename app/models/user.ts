@@ -15,8 +15,10 @@ export default class User extends compose(BaseModel, AuthFinder) {
 
   @column()
   declare firstName: string
+
   @column()
   declare lastName: string
+
   @column()
   declare githubHandle: string
 

@@ -15,6 +15,29 @@
   color: var(--pre-text-color);
 }
 
+.authTextRouting {
+  display: flex;
+  align-items: center;
+  margin-top: -0.7 5rem;
+}
+
+.authTextRouting a {
+  color: var(--text-selected-color);
+  text-decoration: none;
+  margin-top: -1rem;
+  margin-left: 0.5rem;
+  text-decoration-line: underline;
+}
+.errorsContainer p {
+    color: red;
+    font-size: 0.8rem;
+    margin-bottom: 0px;
+}
+
+.display{
+  pointer-events: none;
+}
+
 @media screen and (max-width: 767px) {
   .loginMainContent {
     max-width: 600px;

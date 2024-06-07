@@ -165,4 +165,9 @@ export default class AdminController {
       })
     }
   }
+
+  async signOut({ response, auth }: HttpContext) {
+    await auth.use('web').logout()
+    return response.redirect().back()
+  }
 }
