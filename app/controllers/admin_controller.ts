@@ -1,6 +1,9 @@
 import PlanterConfig from '#models/planter_config'
+import User from '#models/user'
 import { newBuildvalidator } from '#validators/new_build'
+import { updateUserValidator, updateUserWithPasswordValidator } from '#validators/register'
 import type { HttpContext } from '@adonisjs/core/http'
+import hash from '@adonisjs/core/services/hash'
 
 export default class AdminController {
   async index({ view, auth }: HttpContext) {
@@ -56,22 +59,31 @@ export default class AdminController {
   }
 
   async account({ view, auth }: HttpContext) {
+    const user = await User.findOrFail(auth.user?.id)
     const firstName = auth.user?.$getAttribute('firstName')
-    const lastName = auth.user?.$getAttribute('lastName')
+    const lastName = user.lastName
+    const githubHandle = auth.user?.$getAttribute('githubHandle')
     const email = auth.user?.$getAttribute('email')
     return view.render('pages/admin/accountSettings', {
       firstName: firstName,
       lastName: lastName,
       email: email,
+      githubHandle: githubHandle,
+      user: user,
     })
   }
 
-  async show({ view, params }: HttpContext) {
+  async show({ view, params, auth }: HttpContext) {
     const allConfigs = await PlanterConfig.query().preload('user')
     const configDetail = allConfigs.find((config) => config.id === Number(params.id))
-    return view.render('pages/admin/buildDetailPage', {
-      configDetail: configDetail,
-    })
+    const user = await User.findOrFail(auth.user?.id)
+    if (configDetail && configDetail.userId === user.id) {
+      return view.render('pages/admin/buildDetailPage', {
+        configDetail: configDetail,
+      })
+    } else {
+      return view.render('pages/errors/not_found')
+    }
   }
 
   async updateActive({ view, request, params }: HttpContext) {
@@ -169,5 +181,78 @@ export default class AdminController {
   async signOut({ response, auth }: HttpContext) {
     await auth.use('web').logout()
     return response.redirect().back()
+  }
+
+  async updateUser({ view, request, response, auth }: HttpContext) {
+    const user = await User.findOrFail(auth.user?.id)
+    const password = request.input('oldPassword')
+    if (await hash.verify(user.password, password)) {
+      if (request.input('newPassword') === null && request.input('confirmNewPassword') === null) {
+        try {
+          user.email = request.input('email')
+          user.firstName = request.input('firstName')
+          user.lastName = request.input('lastName')
+          user.githubHandle = request.input('githubHandle')
+
+          await updateUserValidator.validate(user)
+
+          await user.save()
+
+          return response.redirect().back()
+        } catch (e) {
+          console.log(e)
+          return view.render('pages/admin/accountSettings', {
+            errorMessage: e.messages[0].message,
+            firstName: request.input('firstName'),
+            lastName: request.input('lastName'),
+            githubHandle: request.input('githubHandle'),
+            email: request.input('email'),
+          })
+        }
+      } else if (
+        request.input('newPassword') !== null &&
+        request.input('confirmNewPassword') !== null &&
+        request.input('newPassword') === request.input('confirmNewPassword')
+      ) {
+        try {
+          user.email = request.input('email')
+          user.firstName = request.input('firstName')
+          user.lastName = request.input('lastName')
+          user.githubHandle = request.input('githubHandle')
+          user.password = request.input('newPassword')
+
+          await updateUserWithPasswordValidator.validate(user)
+
+          await user.save()
+
+          return response.redirect().back()
+        } catch (e) {
+          console.log(e)
+          return view.render('pages/admin/accountSettings', {
+            errorMessage: e.messages[0].message,
+            firstName: request.input('firstName'),
+            lastName: request.input('lastName'),
+            githubHandle: request.input('githubHandle'),
+            email: request.input('email'),
+          })
+        }
+      } else if (request.input('newPassword') !== request.input('confirmNewPassword')) {
+        return view.render('pages/admin/accountSettings', {
+          errorMessage: 'Passwords do not match',
+          firstName: request.input('firstName'),
+          lastName: request.input('lastName'),
+          githubHandle: request.input('githubHandle'),
+          email: request.input('email'),
+        })
+      }
+    } else {
+      return view.render('pages/admin/accountSettings', {
+        errorMessage: 'Password incorrect',
+        firstName: request.input('firstName'),
+        lastName: request.input('lastName'),
+        githubHandle: request.input('githubHandle'),
+        email: request.input('email'),
+      })
+    }
   }
 }

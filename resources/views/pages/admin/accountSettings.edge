@@ -2,19 +2,29 @@
 
 @layouts.accountLayout({ title: "Account settings" })
 
-<form>
+@if(errorMessage)
+<div class="errorMessage">
+    <p>{{errorMessage}}</p>
+</div>
+@endif
+
+<form method="POST" action="{{ route('admin.updateUser') }}">
     {{csrfField()}}
     <div class="formField">
         <label for="firstName">Firstname</label>
-        <input type="text" id="firstName" name="firstName" value={{firstName}} required autofocus>
+        <input type="text" id="firstName" name="firstName" value='{{firstName}}' required autofocus>
     </div>
     <div class="formField">
-        <label for="lastName">Lastname</label>
-        <input type="text" id="lastName" name="lastName" value={{lastName}} required>
+        <label for="lastName">Last name</label>
+        <input type="text" id="lastName" name="lastName" value='{{lastName}}' required>
+    </div>
+    <div class="formField">
+        <label for="githubHandle">Github handle</label>
+        <input type="text" id="githubHandle" name="githubHandle" value='{{githubHandle}}' required>
     </div>
     <div class="formField">
         <label for="email">Email</label>
-        <input type="email" id="email" name="email" value={{email}} required>
+        <input type="email" id="email" name="email" value='{{email}}' required>
     </div>
     <div class="formField">
         <label for="oldPassword">Old password</label>

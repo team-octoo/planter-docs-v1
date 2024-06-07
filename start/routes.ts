@@ -73,3 +73,7 @@ router
 router.get('/admin/prebuilds/edit/:id', [AdminController, 'edit']).as('admin.prebuilds.edit')
 router.post('/admin/updateBuild/:id', [AdminController, 'updateBuild']).as('admin.updateBuild')
 router.post('/admin/signOut', [LoginController, 'logout']).as('admin.logout').use(middleware.auth())
+router
+  .post('/admin/account', [AdminController, 'updateUser'])
+  .middleware(middleware.auth())
+  .as('admin.updateUser')

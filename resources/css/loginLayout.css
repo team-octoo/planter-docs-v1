@@ -38,6 +38,10 @@
   pointer-events: none;
 }
 
+.display p{
+  font-weight: 700;
+}
+
 @media screen and (max-width: 767px) {
   .loginMainContent {
     max-width: 600px;

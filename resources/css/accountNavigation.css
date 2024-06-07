@@ -62,14 +62,12 @@
   color: white;
   border: none;
   padding: 1rem;
-  width: 80%;
+  width: 100%;
   align-self: center;
   text-align: center;
   cursor: pointer;
-  border-radius: var(--border-radius);
   position:absolute;
-  bottom: 2rem;
-  margin-left: 10%;
+  bottom: 0;
 }
 
 #mobileDocsNavButton {
